@@ -2,7 +2,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-troque-essa-chave-em-producao'
+SECRET_KEY = 'eoe%2j&xhkv$@@(z--cbibc736+z95r@3ls+sl4_+yu9%^!c%o'
 
 DEBUG = True
 
