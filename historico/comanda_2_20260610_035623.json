@@ -1,0 +1,15 @@
+{
+  "numero": 2,
+  "cliente": "Jorge",
+  "fechada_em": "2026-06-10T03:56:23.774982+00:00",
+  "total": "6.00",
+  "itens": [
+    {
+      "item": "Refrigerante lata",
+      "quantidade": 1,
+      "preco_unitario": "6.00",
+      "subtotal": "6.00",
+      "obs": ""
+    }
+  ]
+}

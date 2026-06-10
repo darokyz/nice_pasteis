@@ -1,0 +1,150 @@
+{
+  "id_comanda": "20260610-001",
+  "numero": 1,
+  "mesa": 14,
+  "cliente": "joao",
+  "versoes": [
+    {
+      "versao": 1,
+      "timestamp": "2026-06-10T04:00:34.641294+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-10T04:00:48.408846+00:00",
+      "total": "30.00",
+      "itens": [
+        {
+          "item": "Virado a paulista",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 3,
+      "timestamp": "2026-06-10T04:00:52.659526+00:00",
+      "total": "60.00",
+      "itens": [
+        {
+          "item": "Virado a paulista",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 4,
+      "timestamp": "2026-06-10T04:00:54.206557+00:00",
+      "total": "64.00",
+      "itens": [
+        {
+          "item": "Virado a paulista",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 5,
+      "timestamp": "2026-06-10T04:00:54.858389+00:00",
+      "total": "70.00",
+      "itens": [
+        {
+          "item": "Virado a paulista",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 5,
+      "timestamp": "2026-06-10T04:04:12.565265+00:00",
+      "total": "70.00",
+      "itens": [
+        {
+          "item": "Virado a paulista",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        }
+      ]
+    }
+  ],
+  "obs": "Sem milho",
+  "versao_atual": 5,
+  "status": "fechada"
+}

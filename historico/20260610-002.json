@@ -1,0 +1,108 @@
+{
+  "id_comanda": "20260610-002",
+  "numero": 2,
+  "mesa": 12,
+  "cliente": "antony",
+  "versoes": [
+    {
+      "versao": 1,
+      "timestamp": "2026-06-10T04:04:28.198710+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-10T04:04:30.510041+00:00",
+      "total": "10.00",
+      "itens": [
+        {
+          "item": "Suco natural",
+          "quantidade": 1,
+          "preco_unitario": "10.00",
+          "subtotal": "10.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 3,
+      "timestamp": "2026-06-10T04:04:32.065186+00:00",
+      "total": "40.00",
+      "itens": [
+        {
+          "item": "Suco natural",
+          "quantidade": 1,
+          "preco_unitario": "10.00",
+          "subtotal": "10.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 4,
+      "timestamp": "2026-06-10T04:04:32.315651+00:00",
+      "total": "70.00",
+      "itens": [
+        {
+          "item": "Suco natural",
+          "quantidade": 1,
+          "preco_unitario": "10.00",
+          "subtotal": "10.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 4,
+      "timestamp": "2026-06-10T04:07:06.412531+00:00",
+      "total": "70.00",
+      "itens": [
+        {
+          "item": "Suco natural",
+          "quantidade": 1,
+          "preco_unitario": "10.00",
+          "subtotal": "10.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    }
+  ],
+  "obs": "",
+  "versao_atual": 4,
+  "status": "fechada"
+}

@@ -1,0 +1,36 @@
+<div id="lista-itens" class="card">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+    <div style="font-size:.72rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Resumo</div>
+    <span style="font-size:.72rem;color:var(--gold);letter-spacing:.5px;">v{{ comanda.versao }}</span>
+  </div>
+
+  {% if comanda.itens.all %}
+    {% for ic in comanda.itens.all %}
+    <div class="rl">
+      <div style="flex:1;">
+        <div><span class="rl-qtd">{{ ic.quantidade }}×</span>{{ ic.item.nome }}</div>
+        {% if ic.obs %}<div class="rl-obs">{{ ic.obs }}</div>{% endif %}
+      </div>
+      <div style="display:flex;align-items:center;gap:.6rem;margin-left:.8rem;">
+        <span style="font-size:.88rem;font-weight:500;">R$ {{ ic.subtotal }}</span>
+        {% if comanda.status == 'aberta' %}
+        <form hx-post="{% url 'remover_item' comanda.pk ic.pk %}" hx-target="#lista-itens" hx-swap="outerHTML" style="margin:0;">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">✕</button>
+        </form>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="total-row">
+      <span class="total-label">Total</span>
+      <span class="total-valor">R$ {{ comanda.total }}</span>
+    </div>
+
+  {% else %}
+    <div style="text-align:center;padding:2rem 0;color:var(--muted);font-size:.85rem;">
+      Nenhum item adicionado.
+    </div>
+  {% endif %}
+</div>

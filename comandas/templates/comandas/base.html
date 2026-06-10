@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Nice Restaurante{% endblock %}</title>
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#141008; --bg-card:#1E1710; --bg-hover:#261E12;
+      --gold:#C8873A; --gold-dim:rgba(200,135,58,0.15); --gold-line:rgba(200,135,58,0.3);
+      --cream:#F0E3C8; --muted:rgba(240,227,200,0.45);
+      --green-bg:rgba(90,138,90,0.2); --green:#90c890; --green-border:rgba(90,138,90,0.35);
+      --red-bg:rgba(138,58,58,0.2); --red:#e08080; --red-border:rgba(138,58,58,0.35);
+      --r:10px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--cream);min-height:100vh;font-size:14px;}
+    header{display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:62px;border-bottom:1px solid var(--gold-line);position:sticky;top:0;background:rgba(20,16,8,0.96);backdrop-filter:blur(8px);z-index:100;}
+    .logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;}
+    .logo-icon{width:32px;height:32px;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);}
+    .logo-text{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--cream);}
+    .logo-sub{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
+    nav{display:flex;align-items:center;gap:.3rem;}
+    nav a{color:var(--muted);text-decoration:none;font-size:.8rem;letter-spacing:.5px;padding:.4rem .8rem;border-radius:6px;transition:color .2s,background .2s;}
+    nav a:hover{color:var(--cream);background:var(--gold-dim);}
+    .nav-cta{background:var(--gold)!important;color:var(--bg)!important;font-weight:600!important;margin-left:.4rem;}
+    main{max-width:1040px;margin:0 auto;padding:2rem 1.5rem;}
+    .page-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:var(--cream);margin-bottom:1.6rem;}
+    .page-title span{color:var(--gold);}
+    .card{background:var(--bg-card);border:1px solid var(--gold-line);border-radius:var(--r);padding:1.2rem;}
+    .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.2rem;border-radius:7px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.82rem;font-weight:500;text-decoration:none;transition:opacity .15s;white-space:nowrap;}
+    .btn:hover{opacity:.88;}
+    .btn-gold{background:var(--gold);color:var(--bg);}
+    .btn-ghost{background:var(--gold-dim);color:var(--gold);border:1px solid var(--gold-line);}
+    .btn-danger{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border);font-size:.75rem;padding:.3rem .6rem;}
+    .btn-success{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border);}
+    label{display:block;font-size:.75rem;font-weight:500;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;}
+    input,select,textarea{width:100%;padding:.6rem .85rem;background:var(--bg);border:1px solid var(--gold-line);border-radius:7px;color:var(--cream);font-size:.9rem;font-family:'Inter',sans-serif;}
+    input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);}
+    input::placeholder{color:var(--muted);}
+    .form-group{margin-bottom:1rem;}
+    .divider{height:1px;background:var(--gold-line);margin:1rem 0;}
+    .badge{display:inline-block;padding:.2rem .65rem;border-radius:20px;font-size:.72rem;font-weight:500;}
+    .badge-open{background:var(--gold-dim);color:var(--gold);border:1px solid var(--gold-line);}
+    .badge-closed{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border);}
+    .erro{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border);padding:.75rem 1rem;border-radius:7px;margin:.5rem 0;font-size:.85rem;}
+    ::-webkit-scrollbar{width:5px;}
+    ::-webkit-scrollbar-track{background:var(--bg);}
+    ::-webkit-scrollbar-thumb{background:var(--gold-line);border-radius:3px;}
+  </style>
+  {% block extra_style %}{% endblock %}
+</head>
+<body>
+  <header>
+    <a href="{% url 'index' %}" class="logo">
+      <div class="logo-icon">N</div>
+      <div><div class="logo-text">Nice</div><div class="logo-sub">Restaurante</div></div>
+    </a>
+    <nav>
+      <a href="{% url 'index' %}">Comandas</a>
+      <a href="{% url 'historico' %}">Histórico</a>
+      <a href="/admin/" target="_blank">Admin</a>
+      <a href="{% url 'nova_comanda' %}" class="btn nav-cta">+ Nova comanda</a>
+    </nav>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+</body>
+</html>

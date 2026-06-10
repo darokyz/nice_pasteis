@@ -1,0 +1,37 @@
+{% extends "comandas/base.html" %}
+{% block title %}Histórico — Nice{% endblock %}
+{% block extra_style %}
+<style>
+.ht{width:100%;border-collapse:collapse;}
+.ht th{text-align:left;padding:.7rem 1rem;font-size:.68rem;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);font-weight:500;border-bottom:1px solid var(--gold-line);}
+.ht td{padding:.85rem 1rem;border-bottom:1px solid rgba(200,135,58,0.08);font-size:.88rem;vertical-align:top;}
+.ht tr:last-child td{border-bottom:none;}
+.ht tr:hover td{background:var(--bg-hover);}
+</style>
+{% endblock %}
+{% block content %}
+<h1 class="page-title">Histórico <span>de comandas</span></h1>
+{% if not comandas %}
+<div style="text-align:center;padding:4rem 2rem;color:var(--muted);">
+  <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold-line);margin-bottom:.8rem;">📋</div>
+  <p style="font-size:.9rem;">Nenhuma comanda fechada ainda.</p>
+</div>
+{% else %}
+<div class="card" style="padding:0;overflow:hidden;">
+  <table class="ht">
+    <thead><tr><th>#</th><th>Cliente</th><th>Itens</th><th>Total</th><th>Fechada em</th></tr></thead>
+    <tbody>
+      {% for c in comandas %}
+      <tr>
+        <td style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold);font-weight:600;">#{{ c.numero }}</td>
+        <td>{{ c.cliente|default:"—" }}</td>
+        <td style="color:var(--muted);font-size:.8rem;">{% for ic in c.itens.all %}{{ ic.quantidade }}× {{ ic.item.nome }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
+        <td style="font-weight:600;">R$ {{ c.total }}</td>
+        <td style="color:var(--muted);font-size:.8rem;">{{ c.fechada_em|date:"d/m/Y H:i" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+{% endblock %}

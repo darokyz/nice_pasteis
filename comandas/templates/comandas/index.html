@@ -1,0 +1,41 @@
+{% extends "comandas/base.html" %}
+{% block title %}Comandas — Nice{% endblock %}
+{% block extra_style %}
+<style>
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;}
+.cc{background:var(--bg-card);border:1px solid var(--gold-line);border-radius:var(--r);padding:1.2rem;cursor:pointer;transition:border-color .2s,background .2s,transform .15s;text-decoration:none;display:block;}
+.cc:hover{border-color:var(--gold);background:var(--bg-hover);transform:translateY(-2px);}
+.cc-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1;}
+.cc-cliente{font-size:.82rem;color:var(--muted);margin-top:.3rem;}
+.cc-total{font-size:1.15rem;font-weight:600;color:var(--cream);margin-top:.8rem;}
+.cc-itens{font-size:.75rem;color:var(--muted);margin-top:.2rem;}
+</style>
+{% endblock %}
+{% block content %}
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
+  <h1 class="page-title" style="margin-bottom:0;">Comandas <span>abertas</span></h1>
+  {% if comandas %}<span style="color:var(--muted);font-size:.82rem;">{{ comandas|length }} aberta{{ comandas|length|pluralize:"s" }}</span>{% endif %}
+</div>
+{% if not comandas %}
+<div style="text-align:center;padding:4rem 2rem;color:var(--muted);">
+  <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold-line);margin-bottom:.8rem;">☕</div>
+  <p style="font-size:.9rem;margin-bottom:1.2rem;">Nenhuma comanda aberta no momento.</p>
+  <a href="{% url 'nova_comanda' %}" class="btn btn-gold">+ Abrir primeira comanda</a>
+</div>
+{% else %}
+<div class="grid">
+  {% for c in comandas %}
+  <a href="{% url 'comanda_detalhe' c.pk %}" class="cc">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+      <div class="cc-num">#{{ c.numero }}</div>
+      <span class="badge badge-open">Aberta</span>
+    </div>
+    <div class="cc-cliente">{{ c.cliente|default:"—" }}</div>
+    <div class="divider" style="margin:.8rem 0;"></div>
+    <div class="cc-total">R$ {{ c.total }}</div>
+    <div class="cc-itens">{{ c.itens.count }} item{{ c.itens.count|pluralize:"s" }}</div>
+  </a>
+  {% endfor %}
+</div>
+{% endif %}
+{% endblock %}
