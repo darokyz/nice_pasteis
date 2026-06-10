@@ -1,46 +1,169 @@
 {% extends "comandas/base.html" %}
 {% block title %}Comanda #{{ comanda.numero }} — Nice{% endblock %}
+
 {% block extra_style %}
 <style>
-.detalhe-grid{display:grid;grid-template-columns:1fr 320px;gap:1.2rem;align-items:start;}
-@media(max-width:720px){.detalhe-grid{grid-template-columns:1fr;}}
-.cat-label{font-size:.68rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin:1.2rem 0 .5rem;padding-bottom:.3rem;border-bottom:1px solid var(--gold-line);}
-.cat-label:first-child{margin-top:0;}
-.item-row{display:flex;justify-content:space-between;align-items:center;padding:.6rem .75rem;border-radius:7px;cursor:pointer;transition:background .15s;border:1px solid transparent;margin-bottom:.25rem;background:none;width:100%;text-align:left;color:var(--cream);font-family:'Inter',sans-serif;font-size:.88rem;}
-.item-row:hover{background:var(--gold-dim);border-color:var(--gold-line);}
-.item-preco{color:var(--gold);font-weight:500;font-size:.82rem;white-space:nowrap;margin-left:.5rem;}
-.rl{display:flex;justify-content:space-between;align-items:center;padding:.65rem 0;border-bottom:1px solid rgba(200,135,58,0.1);}
-.rl:last-of-type{border-bottom:none;}
-.rl-qtd{color:var(--gold);font-size:.8rem;font-weight:600;margin-right:.3rem;}
-.rl-obs{font-size:.75rem;color:var(--muted);}
-.total-row{display:flex;justify-content:space-between;align-items:center;padding-top:1rem;margin-top:.5rem;border-top:1px solid var(--gold-line);}
-.total-label{font-size:.75rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);}
-.total-valor{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--gold);line-height:1;}
-.meta-chip{font-size:.75rem;color:var(--muted);background:var(--gold-dim);border:1px solid var(--gold-line);border-radius:20px;padding:.2rem .7rem;display:inline-block;}
-.obs-salva{font-size:.75rem;color:var(--green);padding:.3rem 0;}
+  /* ── Layout ── */
+  .detalhe-grid {
+    display: grid;
+    grid-template-columns: 1fr 330px;
+    gap: 1.2rem;
+    align-items: start;
+  }
+  @media (max-width: 740px) { .detalhe-grid { grid-template-columns: 1fr; } }
+
+  /* ── Header da comanda ── */
+  .comanda-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .8rem;
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--gold-border);
+  }
+  .comanda-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .comanda-cliente-nome {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--cream-60);
+    margin-top: .15rem;
+  }
+  .comanda-chips {
+    display: flex;
+    gap: .4rem;
+    flex-wrap: wrap;
+    margin-top: .5rem;
+  }
+  .comanda-actions {
+    display: flex;
+    gap: .6rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── Cardápio ── */
+  .cardapio-label {
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: .5rem 0 .4rem;
+    border-bottom: 1px solid var(--gold-border);
+    margin: 1rem 0 .5rem;
+  }
+  .cardapio-label:first-child { margin-top: 0; }
+
+  .item-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: .6rem .75rem;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: var(--r-sm);
+    cursor: pointer;
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    font-size: .85rem;
+    text-align: left;
+    transition: background .15s, border-color .15s;
+    margin-bottom: .2rem;
+  }
+  .item-btn:hover {
+    background: var(--gold-dim);
+    border-color: rgba(200,135,58,0.2);
+  }
+  .item-btn:active { opacity: .7; }
+  .item-btn-preco {
+    color: var(--gold);
+    font-size: .8rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+    margin-left: .5rem;
+  }
+
+  /* ── Resumo ── */
+  .resumo-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .65rem 0;
+    border-bottom: 1px solid rgba(237,224,196,0.06);
+  }
+  .resumo-linha:last-of-type { border-bottom: none; }
+  .resumo-qtd {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin-right: .4rem;
+    min-width: 1.6rem;
+  }
+  .resumo-nome { font-size: .87rem; }
+  .resumo-obs { font-size: .74rem; color: var(--cream-35); margin-top: .1rem; }
+  .resumo-sub {
+    font-size: .87rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+    margin-left: .8rem;
+  }
+
+  .total-bloco {
+    margin-top: .8rem;
+    padding-top: .9rem;
+    border-top: 1px solid var(--gold-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .total-label {
+    font-size: .68rem;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--cream-35);
+  }
+  .total-valor {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ── Observações ── */
+  .obs-feedback { font-size: .75rem; color: var(--green); }
 </style>
 {% endblock %}
 
 {% block content %}
-<div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.8rem;">
+<div class="comanda-header">
   <div>
-    <a href="{% url 'index' %}" style="color:var(--muted);font-size:.78rem;text-decoration:none;letter-spacing:.5px;">← COMANDAS</a>
-    <h1 class="page-title" style="margin-top:.4rem;margin-bottom:.5rem;">
-      <span>#{{ comanda.numero }}</span>
-      {% if comanda.cliente %}
-      <span style="font-family:'Inter',sans-serif;font-size:1rem;font-weight:300;color:var(--muted);"> — {{ comanda.cliente }}</span>
-      {% endif %}
-    </h1>
-    <div style="display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;">
-      {% if comanda.mesa %}
-      <span class="meta-chip">Mesa {{ comanda.mesa }}</span>
-      {% endif %}
-      <!-- <span class="meta-chip">{{ comanda.id_comanda }}</span> -->
-      <span class="meta-chip">v{{ comanda.versao }}</span>
-      <span class="meta-chip">{{ comanda.criada_em|date:"d/m/Y H:i" }}</span>
+    <div class="comanda-num">#{{ comanda.numero }}</div>
+    {% if comanda.cliente %}
+    <div class="comanda-cliente-nome">{{ comanda.cliente }}</div>
+    {% endif %}
+    <div class="comanda-chips">
+      {% if comanda.mesa %}<span class="chip">Mesa {{ comanda.mesa }}</span>{% endif %}
+      <span class="chip">{{ comanda.id_comanda }}</span>
+      <span class="chip">v{{ comanda.versao }}</span>
+      <span class="chip">{{ comanda.criada_em|date:"d/m H:i" }}</span>
     </div>
   </div>
-  <div style="display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;">
+  <div class="comanda-actions">
     <a href="{% url 'imprimir_comanda' comanda.pk %}" target="_blank" class="btn btn-ghost">
       🖨 Imprimir
     </a>
@@ -60,52 +183,60 @@
 
   {% if comanda.status == 'aberta' %}
   <div>
-    <div class="card">
-      <div style="font-size:.72rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;">Cardápio</div>
+    <!-- Cardápio -->
+    <div class="card" style="margin-bottom:1rem;">
+      <div class="section-label">Cardápio</div>
+
       {% for categoria in categorias %}
         {% with itens_cat=categoria.itens.all %}{% if itens_cat %}
-          <div class="cat-label">{{ categoria.nome }}</div>
+          <div class="cardapio-label">{{ categoria.nome }}</div>
           {% for item in itens_cat %}{% if item.disponivel %}
-            <form hx-post="{% url 'adicionar_item' comanda.pk %}" hx-target="#lista-itens" hx-swap="outerHTML" style="margin:0;">
+            <form hx-post="{% url 'adicionar_item' comanda.pk %}"
+                  hx-target="#lista-itens" hx-swap="outerHTML" style="margin:0;">
               {% csrf_token %}
               <input type="hidden" name="item_id" value="{{ item.pk }}">
-              <button type="submit" class="item-row">
+              <button type="submit" class="item-btn">
                 <span>{{ item.nome }}</span>
-                <span class="item-preco">R$ {{ item.preco }}</span>
+                <span class="item-btn-preco">R$ {{ item.preco }}</span>
               </button>
             </form>
           {% endif %}{% endfor %}
         {% endif %}{% endwith %}
       {% empty %}
         {% for item in itens_disponiveis %}{% if item.disponivel %}
-          <form hx-post="{% url 'adicionar_item' comanda.pk %}" hx-target="#lista-itens" hx-swap="outerHTML" style="margin:0;">
+          <form hx-post="{% url 'adicionar_item' comanda.pk %}"
+                hx-target="#lista-itens" hx-swap="outerHTML" style="margin:0;">
             {% csrf_token %}
             <input type="hidden" name="item_id" value="{{ item.pk }}">
-            <button type="submit" class="item-row">
+            <button type="submit" class="item-btn">
               <span>{{ item.nome }}</span>
-              <span class="item-preco">R$ {{ item.preco }}</span>
+              <span class="item-btn-preco">R$ {{ item.preco }}</span>
             </button>
           </form>
         {% endif %}{% endfor %}
       {% endfor %}
     </div>
 
-    <!-- Observações gerais -->
-    <div class="card" style="margin-top:1rem;" id="obs-card">
-      <div style="font-size:.72rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem;">Observações</div>
-      <form hx-post="{% url 'salvar_obs' comanda.pk %}" hx-target="#obs-feedback" hx-swap="innerHTML">
+    <!-- Observações -->
+    <div class="card">
+      <div class="section-label" style="margin-bottom:.8rem;">Observações</div>
+      <form hx-post="{% url 'salvar_obs' comanda.pk %}"
+            hx-target="#obs-feedback" hx-swap="innerHTML">
         {% csrf_token %}
-        <textarea name="obs" rows="2" placeholder="Ex: sem cebola, carne mal passada..."
-          style="resize:vertical;">{{ comanda.obs }}</textarea>
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:.5rem;">
-          <span id="obs-feedback" class="obs-salva"></span>
-          <button type="submit" class="btn btn-ghost" style="padding:.4rem .9rem;font-size:.78rem;">Salvar obs</button>
+        <textarea name="obs" rows="2"
+          placeholder="Ex: sem cebola, carne mal passada...">{{ comanda.obs }}</textarea>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:.6rem;">
+          <span id="obs-feedback" class="obs-feedback"></span>
+          <button type="submit" class="btn btn-ghost" style="font-size:.77rem;padding:.4rem .9rem;">
+            Salvar
+          </button>
         </div>
       </form>
     </div>
   </div>
   {% endif %}
 
+  <!-- Resumo -->
   <div>{% include "comandas/partials/lista_itens.html" %}</div>
 </div>
 {% endblock %}

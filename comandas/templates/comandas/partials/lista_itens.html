@@ -1,20 +1,24 @@
 <div id="lista-itens" class="card">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
-    <div style="font-size:.72rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Resumo</div>
+    <span class="section-label">Resumo</span>
     <span style="font-size:.72rem;color:var(--gold);letter-spacing:.5px;">v{{ comanda.versao }}</span>
   </div>
 
   {% if comanda.itens.all %}
     {% for ic in comanda.itens.all %}
-    <div class="rl">
-      <div style="flex:1;">
-        <div><span class="rl-qtd">{{ ic.quantidade }}×</span>{{ ic.item.nome }}</div>
-        {% if ic.obs %}<div class="rl-obs">{{ ic.obs }}</div>{% endif %}
+    <div class="resumo-linha htmx-added">
+      <div style="flex:1;min-width:0;">
+        <div style="display:flex;align-items:baseline;">
+          <span class="resumo-qtd">{{ ic.quantidade }}×</span>
+          <span class="resumo-nome">{{ ic.item.nome }}</span>
+        </div>
+        {% if ic.obs %}<div class="resumo-obs">{{ ic.obs }}</div>{% endif %}
       </div>
-      <div style="display:flex;align-items:center;gap:.6rem;margin-left:.8rem;">
-        <span style="font-size:.88rem;font-weight:500;">R$ {{ ic.subtotal }}</span>
+      <div style="display:flex;align-items:center;gap:.55rem;flex-shrink:0;">
+        <span class="resumo-sub">R$ {{ ic.subtotal }}</span>
         {% if comanda.status == 'aberta' %}
-        <form hx-post="{% url 'remover_item' comanda.pk ic.pk %}" hx-target="#lista-itens" hx-swap="outerHTML" style="margin:0;">
+        <form hx-post="{% url 'remover_item' comanda.pk ic.pk %}"
+              hx-target="#lista-itens" hx-swap="outerHTML" style="margin:0;">
           {% csrf_token %}
           <button type="submit" class="btn btn-danger">✕</button>
         </form>
@@ -23,14 +27,15 @@
     </div>
     {% endfor %}
 
-    <div class="total-row">
+    <div class="total-bloco">
       <span class="total-label">Total</span>
-      <span class="total-valor">R$ {{ comanda.total }}</span>
+      <span class="total-valor flash-update">R$ {{ comanda.total }}</span>
     </div>
 
   {% else %}
-    <div style="text-align:center;padding:2rem 0;color:var(--muted);font-size:.85rem;">
-      Nenhum item adicionado.
+    <div style="text-align:center;padding:2.5rem 0;color:var(--cream-35);">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-style:italic;opacity:.4;margin-bottom:.5rem;">vazio</div>
+      <div style="font-size:.82rem;">Selecione itens no cardápio</div>
     </div>
   {% endif %}
 </div>

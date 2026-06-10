@@ -1,37 +1,101 @@
 {% extends "comandas/base.html" %}
 {% block title %}Histórico — Nice{% endblock %}
+
 {% block extra_style %}
 <style>
-.ht{width:100%;border-collapse:collapse;}
-.ht th{text-align:left;padding:.7rem 1rem;font-size:.68rem;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);font-weight:500;border-bottom:1px solid var(--gold-line);}
-.ht td{padding:.85rem 1rem;border-bottom:1px solid rgba(200,135,58,0.08);font-size:.88rem;vertical-align:top;}
-.ht tr:last-child td{border-bottom:none;}
-.ht tr:hover td{background:var(--bg-hover);}
+  .hist-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--gold-border);
+  }
+  .hist-table { width: 100%; border-collapse: collapse; }
+  .hist-table th {
+    text-align: left;
+    padding: .7rem 1rem;
+    font-size: .67rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--cream-35);
+    font-weight: 600;
+    border-bottom: 1px solid var(--gold-border);
+  }
+  .hist-table th:last-child { text-align: right; }
+  .hist-table td {
+    padding: .9rem 1rem;
+    border-bottom: 1px solid rgba(237,224,196,0.05);
+    font-size: .86rem;
+    vertical-align: middle;
+  }
+  .hist-table tr:last-child td { border-bottom: none; }
+  .hist-table tr:hover td { background: rgba(200,135,58,0.03); }
+  .hist-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .hist-id { font-size: .72rem; color: var(--cream-35); margin-top: .1rem; }
+  .hist-itens { color: var(--cream-35); font-size: .78rem; max-width: 260px; }
+  .hist-total {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+  .hist-data { color: var(--cream-35); font-size: .78rem; white-space: nowrap; }
 </style>
 {% endblock %}
+
 {% block content %}
-<h1 class="page-title">Histórico <span>de comandas</span></h1>
+<div class="hist-header">
+  <div>
+    {% if comandas %}
+    <div class="section-label" style="margin-bottom:.4rem;">{{ comandas|length }} registro{{ comandas|length|pluralize:"s" }}</div>
+    {% endif %}
+    <h1 class="page-title">Histórico <b>de comandas</b></h1>
+  </div>
+</div>
+
 {% if not comandas %}
-<div style="text-align:center;padding:4rem 2rem;color:var(--muted);">
-  <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold-line);margin-bottom:.8rem;">📋</div>
-  <p style="font-size:.9rem;">Nenhuma comanda fechada ainda.</p>
-</div>
+  <div style="text-align:center;padding:5rem 2rem;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:4rem;font-style:italic;color:var(--gold-border);margin-bottom:1rem;line-height:1;">vazio</div>
+    <p style="font-size:.9rem;color:var(--cream-35);">Nenhuma comanda fechada ainda.</p>
+  </div>
 {% else %}
-<div class="card" style="padding:0;overflow:hidden;">
-  <table class="ht">
-    <thead><tr><th>#</th><th>Cliente</th><th>Itens</th><th>Total</th><th>Fechada em</th></tr></thead>
-    <tbody>
-      {% for c in comandas %}
-      <tr>
-        <td style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold);font-weight:600;">#{{ c.numero }}</td>
-        <td>{{ c.cliente|default:"—" }}</td>
-        <td style="color:var(--muted);font-size:.8rem;">{% for ic in c.itens.all %}{{ ic.quantidade }}× {{ ic.item.nome }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
-        <td style="font-weight:600;">R$ {{ c.total }}</td>
-        <td style="color:var(--muted);font-size:.8rem;">{{ c.fechada_em|date:"d/m/Y H:i" }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
+  <div class="card" style="padding:0;overflow:hidden;">
+    <table class="hist-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Cliente / Mesa</th>
+          <th>Itens</th>
+          <th>Total</th>
+          <th>Fechada em</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for c in comandas %}
+        <tr>
+          <td>
+            <div class="hist-num">#{{ c.numero }}</div>
+            <div class="hist-id">{{ c.id_comanda }}</div>
+          </td>
+          <td>
+            <div style="font-size:.86rem;">{{ c.cliente|default:"—" }}</div>
+            {% if c.mesa %}<div style="font-size:.75rem;color:var(--cream-35);">Mesa {{ c.mesa }}</div>{% endif %}
+          </td>
+          <td class="hist-itens">
+            {% for ic in c.itens.all %}{{ ic.quantidade }}× {{ ic.item.nome }}{% if not forloop.last %}, {% endif %}{% endfor %}
+          </td>
+          <td class="hist-total">R$ {{ c.total }}</td>
+          <td class="hist-data">{{ c.fechada_em|date:"d/m/Y H:i" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 {% endif %}
 {% endblock %}
