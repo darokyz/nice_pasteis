@@ -1,0 +1,197 @@
+{
+  "id_comanda": "20260610-004",
+  "numero": 4,
+  "mesa": 2,
+  "cliente": "joao",
+  "versoes": [
+    {
+      "versao": 1,
+      "timestamp": "2026-06-10T04:07:43.860533+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-10T04:07:45.676935+00:00",
+      "total": "4.00",
+      "itens": [
+        {
+          "item": "Agua mineral",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 3,
+      "timestamp": "2026-06-10T04:07:48.261427+00:00",
+      "total": "34.00",
+      "itens": [
+        {
+          "item": "Agua mineral",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 4,
+      "timestamp": "2026-06-10T04:07:49.430443+00:00",
+      "total": "39.00",
+      "itens": [
+        {
+          "item": "Agua mineral",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 4,
+      "timestamp": "2026-06-10T04:08:22.508352+00:00",
+      "total": "39.00",
+      "itens": [
+        {
+          "item": "Agua mineral",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 1,
+      "timestamp": "2026-06-10T21:12:35.401639+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-10T21:12:37.135794+00:00",
+      "total": "5.00",
+      "itens": [
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 3,
+      "timestamp": "2026-06-10T21:12:37.467009+00:00",
+      "total": "10.00",
+      "itens": [
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 4,
+      "timestamp": "2026-06-10T21:14:18.065942+00:00",
+      "total": "5.00",
+      "itens": [
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 5,
+      "timestamp": "2026-06-10T21:14:18.584989+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 6,
+      "timestamp": "2026-06-10T21:15:27.914690+00:00",
+      "total": "10.00",
+      "itens": [
+        {
+          "item": "Suco natural",
+          "quantidade": 1,
+          "preco_unitario": "10.00",
+          "subtotal": "10.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 6,
+      "timestamp": "2026-06-10T21:15:29.563846+00:00",
+      "total": "10.00",
+      "itens": [
+        {
+          "item": "Suco natural",
+          "quantidade": 1,
+          "preco_unitario": "10.00",
+          "subtotal": "10.00",
+          "obs": ""
+        }
+      ]
+    }
+  ],
+  "obs": "",
+  "versao_atual": 6,
+  "status": "fechada"
+}

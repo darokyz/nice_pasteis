@@ -1,0 +1,29 @@
+{
+  "numero": 3,
+  "cliente": "yaritza",
+  "fechada_em": "2026-06-10T03:10:29.693156+00:00",
+  "total": "41.00",
+  "itens": [
+    {
+      "item": "Parmegiana de frango",
+      "quantidade": 1,
+      "preco_unitario": "30.00",
+      "subtotal": "30.00",
+      "obs": ""
+    },
+    {
+      "item": "Arroz",
+      "quantidade": 1,
+      "preco_unitario": "5.00",
+      "subtotal": "5.00",
+      "obs": ""
+    },
+    {
+      "item": "Refrigerante lata",
+      "quantidade": 1,
+      "preco_unitario": "6.00",
+      "subtotal": "6.00",
+      "obs": ""
+    }
+  ]
+}
