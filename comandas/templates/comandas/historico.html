@@ -22,7 +22,6 @@
     font-weight: 600;
     border-bottom: 1px solid var(--gold-border);
   }
-  .hist-table th:last-child { text-align: right; }
   .hist-table td {
     padding: .9rem 1rem;
     border-bottom: 1px solid rgba(237,224,196,0.05);
@@ -33,18 +32,12 @@
   .hist-table tr:hover td { background: rgba(200,135,58,0.03); }
   .hist-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--gold);
-    line-height: 1;
+    font-size: 1.3rem; font-weight: 600;
+    color: var(--gold); line-height: 1;
   }
   .hist-id { font-size: .72rem; color: var(--cream-35); margin-top: .1rem; }
   .hist-itens { color: var(--cream-35); font-size: .78rem; max-width: 260px; }
-  .hist-total {
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
-    text-align: right;
-  }
+  .hist-total { font-weight: 600; font-variant-numeric: tabular-nums; }
   .hist-data { color: var(--cream-35); font-size: .78rem; white-space: nowrap; }
 </style>
 {% endblock %}
@@ -74,6 +67,7 @@
           <th>Itens</th>
           <th>Total</th>
           <th>Fechada em</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -81,10 +75,10 @@
         <tr>
           <td>
             <div class="hist-num">#{{ c.numero }}</div>
-            <div class="hist-id">{{ c.id_comanda }}</div>
+            <div class="hist-id">{{ c.id_comanda }} · v{{ c.versao }}</div>
           </td>
           <td>
-            <div style="font-size:.86rem;">{{ c.cliente|default:"—" }}</div>
+            <div>{{ c.cliente|default:"—" }}</div>
             {% if c.mesa %}<div style="font-size:.75rem;color:var(--cream-35);">Mesa {{ c.mesa }}</div>{% endif %}
           </td>
           <td class="hist-itens">
@@ -92,6 +86,15 @@
           </td>
           <td class="hist-total">R$ {{ c.total }}</td>
           <td class="hist-data">{{ c.fechada_em|date:"d/m/Y H:i" }}</td>
+          <td>
+            <form method="post" action="{% url 'reabrir_comanda' c.pk %}"
+                  onsubmit="return confirm('Reabrir comanda #{{ c.numero }}? A versão será incrementada.')">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-ghost" style="font-size:.75rem;padding:.35rem .8rem;">
+                ↩ Reabrir
+              </button>
+            </form>
+          </td>
         </tr>
         {% endfor %}
       </tbody>

@@ -5,20 +5,26 @@ from django.views.decorators.http import require_POST
 from .models import Comanda, Item, ItemComanda, Categoria
 
 
-# ── HELPERS ──────────────────────────────────────────────────────────────────
-
-def _incrementar_versao(comanda):
-    """Incrementa versão e salva snapshot JSON."""
-    comanda.versao += 1
-    comanda.save()
-    comanda.salvar_versao_json()
-
-
 # ── VIEWS ─────────────────────────────────────────────────────────────────────
 
 def index(request):
     comandas = Comanda.objects.filter(status=Comanda.STATUS_ABERTA).prefetch_related('itens')
-    return render(request, 'comandas/index.html', {'comandas': comandas})
+
+    # Resumo do dia
+    hoje = timezone.localdate()
+    fechadas_hoje = Comanda.objects.filter(
+        status=Comanda.STATUS_FECHADA,
+        fechada_em__date=hoje
+    ).prefetch_related('itens')
+
+    total_dia = sum(c.total for c in fechadas_hoje)
+    qtd_fechadas = fechadas_hoje.count()
+
+    return render(request, 'comandas/index.html', {
+        'comandas': comandas,
+        'total_dia': total_dia,
+        'qtd_fechadas': qtd_fechadas,
+    })
 
 
 def nova_comanda(request):
@@ -32,7 +38,6 @@ def nova_comanda(request):
             cliente=cliente,
             obs=obs,
         )
-        # Salva versão inicial no JSON
         comanda.salvar_versao_json()
         return redirect('comanda_detalhe', pk=comanda.pk)
 
@@ -65,7 +70,7 @@ def adicionar_item(request, pk):
         ic.quantidade += qtd
         ic.save()
 
-    _incrementar_versao(comanda)
+    # Versão NÃO incrementa aqui — só ao fechar/reabrir
     return render(request, 'comandas/partials/lista_itens.html', {'comanda': comanda})
 
 
@@ -73,13 +78,13 @@ def adicionar_item(request, pk):
 def remover_item(request, pk, item_comanda_id):
     comanda = get_object_or_404(Comanda, pk=pk, status=Comanda.STATUS_ABERTA)
     get_object_or_404(ItemComanda, pk=item_comanda_id, comanda=comanda).delete()
-    _incrementar_versao(comanda)
+
+    # Versão NÃO incrementa aqui — só ao fechar/reabrir
     return render(request, 'comandas/partials/lista_itens.html', {'comanda': comanda})
 
 
 @require_POST
 def salvar_obs(request, pk):
-    """Atualiza observações gerais da comanda via HTMX."""
     comanda = get_object_or_404(Comanda, pk=pk, status=Comanda.STATUS_ABERTA)
     comanda.obs = request.POST.get('obs', '').strip()
     comanda.save()
@@ -94,11 +99,24 @@ def fechar_comanda(request, pk):
             'comanda': comanda,
             'erro': 'Adicione pelo menos um item antes de fechar.'
         })
-    comanda.status    = Comanda.STATUS_FECHADA
+
+    comanda.status     = Comanda.STATUS_FECHADA
     comanda.fechada_em = timezone.now()
     comanda.save()
-    comanda.salvar_versao_json()
+    comanda.salvar_versao_json()  # salva snapshot da versão atual ao fechar
     return redirect('index')
+
+
+@require_POST
+def reabrir_comanda(request, pk):
+    """Reabre uma comanda fechada e incrementa a versão."""
+    comanda = get_object_or_404(Comanda, pk=pk, status=Comanda.STATUS_FECHADA)
+    comanda.status     = Comanda.STATUS_ABERTA
+    comanda.fechada_em = None
+    comanda.versao    += 1   # versão incrementa AQUI — nova sessão de edição
+    comanda.save()
+    comanda.salvar_versao_json()
+    return redirect('comanda_detalhe', pk=comanda.pk)
 
 
 def imprimir_comanda(request, pk):

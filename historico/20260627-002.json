@@ -1,0 +1,157 @@
+{
+  "id_comanda": "20260627-002",
+  "numero": 2,
+  "mesa": 5,
+  "cliente": "",
+  "versoes": [
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T14:44:50.993528+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T14:44:59.090549+00:00",
+      "total": "40.00",
+      "itens": [
+        {
+          "item": "Suco natural",
+          "quantidade": 1,
+          "preco_unitario": "10.00",
+          "subtotal": "10.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "fezes",
+          "quantidade": 1,
+          "preco_unitario": "20.00",
+          "subtotal": "20.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-27T14:45:06.014303+00:00",
+      "total": "40.00",
+      "itens": [
+        {
+          "item": "Suco natural",
+          "quantidade": 1,
+          "preco_unitario": "10.00",
+          "subtotal": "10.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "fezes",
+          "quantidade": 1,
+          "preco_unitario": "20.00",
+          "subtotal": "20.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-27T14:45:25.379698+00:00",
+      "total": "206.00",
+      "itens": [
+        {
+          "item": "Suco natural",
+          "quantidade": 1,
+          "preco_unitario": "10.00",
+          "subtotal": "10.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "fezes",
+          "quantidade": 1,
+          "preco_unitario": "20.00",
+          "subtotal": "20.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Virado a paulista - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        }
+      ]
+    }
+  ],
+  "obs": "",
+  "versao_atual": 2,
+  "status": "fechada"
+}

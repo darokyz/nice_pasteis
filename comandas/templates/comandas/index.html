@@ -7,25 +7,47 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin-bottom: 2rem;
+    margin-bottom: 1.8rem;
     padding-bottom: 1.2rem;
     border-bottom: 1px solid var(--gold-border);
   }
-  .index-header .count {
-    font-size: .75rem;
+
+  /* Resumo do dia */
+  .resumo-dia {
+    display: flex;
+    gap: .8rem;
+  }
+  .resumo-bloco {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--r);
+    padding: .8rem 1.2rem;
+    text-align: right;
+    min-width: 130px;
+  }
+  .resumo-bloco .rb-label {
+    font-size: .65rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     color: var(--cream-35);
-    letter-spacing: .5px;
     margin-bottom: .2rem;
   }
+  .resumo-bloco .rb-valor {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
 
-  /* Grid de comandas */
+  /* Grid */
   .comandas-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     gap: 1rem;
   }
 
-  /* Card de comanda */
+  /* Card */
   .cc {
     position: relative;
     overflow: hidden;
@@ -42,23 +64,15 @@
     box-shadow: 0 0 0 1px rgba(200,135,58,0.45), 0 8px 32px rgba(0,0,0,0.35), 0 0 24px rgba(200,135,58,0.06);
     transform: translateY(-3px);
   }
-
-  /* Número como marca d'água */
   .cc-watermark {
     position: absolute;
-    right: -8px;
-    bottom: -16px;
+    right: -8px; bottom: -16px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 7rem;
-    font-weight: 600;
-    color: var(--gold);
-    opacity: .04;
-    line-height: 1;
-    pointer-events: none;
-    user-select: none;
-    letter-spacing: -4px;
+    font-size: 7rem; font-weight: 600;
+    color: var(--gold); opacity: .04;
+    line-height: 1; pointer-events: none;
+    user-select: none; letter-spacing: -4px;
   }
-
   .cc-top {
     display: flex;
     justify-content: space-between;
@@ -67,56 +81,38 @@
   }
   .cc-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.4rem;
-    font-weight: 600;
-    color: var(--gold);
-    line-height: 1;
+    font-size: 2.4rem; font-weight: 600;
+    color: var(--gold); line-height: 1;
   }
-  .cc-cliente {
-    font-size: .8rem;
+  .cc-cliente { font-size: .8rem; color: var(--cream-35); margin-top: .25rem; }
+  .cc-meta { display: flex; gap: .4rem; margin-top: .25rem; flex-wrap: wrap; align-items: center; }
+  .cc-total { font-size: 1.2rem; font-weight: 600; color: var(--cream); margin-top: .9rem; font-variant-numeric: tabular-nums; }
+  .cc-itens { font-size: .72rem; color: var(--cream-35); margin-top: .15rem; }
+
+  /* Indicador de tempo */
+  .tempo-chip {
+    font-size: .68rem;
     color: var(--cream-35);
-    margin-top: .25rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    background: var(--cream-15);
+    border: 1px solid rgba(237,224,196,0.1);
+    border-radius: 6px;
+    padding: .2rem .6rem;
   }
-  .cc-meta {
-    display: flex;
-    gap: .4rem;
-    margin-top: .25rem;
-    flex-wrap: wrap;
+  .tempo-chip.alerta {
+    color: #e0a060;
+    background: rgba(224,160,96,0.1);
+    border-color: rgba(224,160,96,0.25);
   }
-  .cc-total {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--cream);
-    margin-top: .9rem;
-    font-variant-numeric: tabular-nums;
-  }
-  .cc-itens {
-    font-size: .72rem;
-    color: var(--cream-35);
-    margin-top: .15rem;
+  .tempo-chip.urgente {
+    color: var(--red);
+    background: var(--red-bg);
+    border-color: var(--red-border);
   }
 
-  /* Empty state */
-  .empty {
-    text-align: center;
-    padding: 5rem 2rem;
-  }
-  .empty-glyph {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 4rem;
-    font-style: italic;
-    color: var(--gold-border);
-    margin-bottom: 1rem;
-    line-height: 1;
-  }
-  .empty p {
-    font-size: .9rem;
-    color: var(--cream-35);
-    margin-bottom: 1.5rem;
-  }
+  /* Empty */
+  .empty { text-align: center; padding: 5rem 2rem; }
+  .empty-glyph { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-style: italic; color: var(--gold-border); margin-bottom: 1rem; line-height: 1; }
+  .empty p { font-size: .9rem; color: var(--cream-35); margin-bottom: 1.5rem; }
 </style>
 {% endblock %}
 
@@ -124,9 +120,21 @@
 <div class="index-header">
   <div>
     {% if comandas %}
-    <div class="count">{{ comandas|length }} comanda{{ comandas|length|pluralize:"s" }} em aberto</div>
+    <div class="section-label" style="margin-bottom:.4rem;">{{ comandas|length }} em aberto</div>
     {% endif %}
     <h1 class="page-title">Comandas <b>abertas</b></h1>
+  </div>
+
+  <!-- Resumo do dia -->
+  <div class="resumo-dia">
+    <div class="resumo-bloco">
+      <div class="rb-label">Fechadas hoje</div>
+      <div class="rb-valor">{{ qtd_fechadas }}</div>
+    </div>
+    <div class="resumo-bloco">
+      <div class="rb-label">Total do dia</div>
+      <div class="rb-valor">R$ {{ total_dia }}</div>
+    </div>
   </div>
 </div>
 
@@ -151,6 +159,8 @@
       <div class="cc-meta">
         {% if c.mesa %}<span class="chip">Mesa {{ c.mesa }}</span>{% endif %}
         <span class="chip">v{{ c.versao }}</span>
+        <!-- Indicador de tempo via JS -->
+        <span class="tempo-chip" data-criada="{{ c.criada_em.isoformat }}">...</span>
       </div>
       <div class="divider"></div>
       <div class="cc-total">R$ {{ c.total }}</div>
@@ -159,4 +169,30 @@
     {% endfor %}
   </div>
 {% endif %}
+
+<script>
+  function tempoDecorrido(isoString) {
+    const criada = new Date(isoString);
+    const agora = new Date();
+    const diff = Math.floor((agora - criada) / 60000); // minutos
+
+    if (diff < 1)   return { texto: 'agora', classe: '' };
+    if (diff < 30)  return { texto: `há ${diff}min`, classe: '' };
+    if (diff < 60)  return { texto: `há ${diff}min`, classe: 'alerta' };
+    const horas = Math.floor(diff / 60);
+    const mins  = diff % 60;
+    return { texto: `há ${horas}h${mins > 0 ? mins + 'min' : ''}`, classe: 'urgente' };
+  }
+
+  function atualizarTempos() {
+    document.querySelectorAll('.tempo-chip[data-criada]').forEach(el => {
+      const { texto, classe } = tempoDecorrido(el.dataset.criada);
+      el.textContent = texto;
+      el.className = 'tempo-chip ' + classe;
+    });
+  }
+
+  atualizarTempos();
+  setInterval(atualizarTempos, 30000); // atualiza a cada 30s
+</script>
 {% endblock %}

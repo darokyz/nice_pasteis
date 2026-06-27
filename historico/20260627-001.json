@@ -1,0 +1,185 @@
+{
+  "id_comanda": "20260627-001",
+  "numero": 1,
+  "mesa": 2,
+  "cliente": "",
+  "versoes": [
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T14:38:27.476269+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-27T14:38:28.827109+00:00",
+      "total": "6.00",
+      "itens": [
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 3,
+      "timestamp": "2026-06-27T14:38:30.063072+00:00",
+      "total": "36.00",
+      "itens": [
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Bife acebolado - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 4,
+      "timestamp": "2026-06-27T14:38:31.158400+00:00",
+      "total": "41.00",
+      "itens": [
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Bife acebolado - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 5,
+      "timestamp": "2026-06-27T14:38:32.136525+00:00",
+      "total": "71.00",
+      "itens": [
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Bife acebolado - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 6,
+      "timestamp": "2026-06-27T14:38:33.255412+00:00",
+      "total": "101.00",
+      "itens": [
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Bife acebolado - Prato Dia",
+          "quantidade": 2,
+          "preco_unitario": "30.00",
+          "subtotal": "60.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 6,
+      "timestamp": "2026-06-27T14:40:16.967992+00:00",
+      "total": "101.00",
+      "itens": [
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Bife acebolado - Prato Dia",
+          "quantidade": 2,
+          "preco_unitario": "30.00",
+          "subtotal": "60.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    }
+  ],
+  "obs": "",
+  "versao_atual": 6,
+  "status": "fechada"
+}

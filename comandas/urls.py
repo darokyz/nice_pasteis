@@ -10,5 +10,6 @@ urlpatterns = [
     path('<int:pk>/remover/<int:item_comanda_id>/', views.remover_item, name='remover_item'),
     path('<int:pk>/obs/', views.salvar_obs, name='salvar_obs'),
     path('<int:pk>/fechar/', views.fechar_comanda, name='fechar_comanda'),
+    path('<int:pk>/reabrir/', views.reabrir_comanda, name='reabrir_comanda'),
     path('<int:pk>/imprimir/', views.imprimir_comanda, name='imprimir_comanda'),
 ]

@@ -457,9 +457,555 @@
           "obs": ""
         }
       ]
+    },
+    {
+      "versao": 22,
+      "timestamp": "2026-06-27T14:38:11.562488+00:00",
+      "total": "613.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 17,
+          "preco_unitario": "30.00",
+          "subtotal": "510.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 23,
+      "timestamp": "2026-06-27T14:38:12.146614+00:00",
+      "total": "618.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 17,
+          "preco_unitario": "30.00",
+          "subtotal": "510.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 24,
+      "timestamp": "2026-06-27T14:38:13.608808+00:00",
+      "total": "648.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 17,
+          "preco_unitario": "30.00",
+          "subtotal": "510.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 2,
+          "preco_unitario": "30.00",
+          "subtotal": "60.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 25,
+      "timestamp": "2026-06-27T14:38:13.950865+00:00",
+      "total": "678.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 17,
+          "preco_unitario": "30.00",
+          "subtotal": "510.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 2,
+          "preco_unitario": "30.00",
+          "subtotal": "60.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Virado a paulista - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 26,
+      "timestamp": "2026-06-27T14:38:16.142063+00:00",
+      "total": "716.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 17,
+          "preco_unitario": "30.00",
+          "subtotal": "510.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 2,
+          "preco_unitario": "30.00",
+          "subtotal": "60.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Virado a paulista - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 27,
+      "timestamp": "2026-06-27T14:38:16.445974+00:00",
+      "total": "754.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 2,
+          "preco_unitario": "38.00",
+          "subtotal": "76.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 17,
+          "preco_unitario": "30.00",
+          "subtotal": "510.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 2,
+          "preco_unitario": "30.00",
+          "subtotal": "60.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Virado a paulista - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 28,
+      "timestamp": "2026-06-27T14:38:17.990617+00:00",
+      "total": "758.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 2,
+          "preco_unitario": "38.00",
+          "subtotal": "76.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 17,
+          "preco_unitario": "30.00",
+          "subtotal": "510.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 2,
+          "preco_unitario": "30.00",
+          "subtotal": "60.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Virado a paulista - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Agua mineral",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 29,
+      "timestamp": "2026-06-27T14:38:18.470443+00:00",
+      "total": "764.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 2,
+          "preco_unitario": "38.00",
+          "subtotal": "76.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 17,
+          "preco_unitario": "30.00",
+          "subtotal": "510.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 2,
+          "preco_unitario": "30.00",
+          "subtotal": "60.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Virado a paulista - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Agua mineral",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 29,
+      "timestamp": "2026-06-27T14:40:21.696538+00:00",
+      "total": "764.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 2,
+          "preco_unitario": "38.00",
+          "subtotal": "76.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 17,
+          "preco_unitario": "30.00",
+          "subtotal": "510.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 2,
+          "preco_unitario": "30.00",
+          "subtotal": "60.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Virado a paulista - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Agua mineral",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        }
+      ]
     }
   ],
   "obs": "",
-  "versao_atual": 21,
-  "status": "aberta"
+  "versao_atual": 29,
+  "status": "fechada"
 }
