@@ -1,0 +1,59 @@
+{
+  "id_comanda": "20260611-003",
+  "numero": 3,
+  "mesa": 10,
+  "cliente": "",
+  "versoes": [
+    {
+      "versao": 1,
+      "timestamp": "2026-06-11T16:12:10.012190+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-11T16:12:19.107126+00:00",
+      "total": "30.00",
+      "itens": [
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 3,
+      "timestamp": "2026-06-11T16:12:19.956625+00:00",
+      "total": "60.00",
+      "itens": [
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 2,
+          "preco_unitario": "30.00",
+          "subtotal": "60.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 3,
+      "timestamp": "2026-06-11T16:13:05.551798+00:00",
+      "total": "60.00",
+      "itens": [
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 2,
+          "preco_unitario": "30.00",
+          "subtotal": "60.00",
+          "obs": ""
+        }
+      ]
+    }
+  ],
+  "obs": "",
+  "versao_atual": 3,
+  "status": "fechada"
+}

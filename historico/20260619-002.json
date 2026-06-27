@@ -1,0 +1,465 @@
+{
+  "id_comanda": "20260619-002",
+  "numero": 2,
+  "mesa": 10,
+  "cliente": "",
+  "versoes": [
+    {
+      "versao": 1,
+      "timestamp": "2026-06-19T18:58:38.139410+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-19T18:58:40.876454+00:00",
+      "total": "38.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 3,
+      "timestamp": "2026-06-27T14:32:24.453196+00:00",
+      "total": "68.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 4,
+      "timestamp": "2026-06-27T14:32:24.681003+00:00",
+      "total": "98.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 2,
+          "preco_unitario": "30.00",
+          "subtotal": "60.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 5,
+      "timestamp": "2026-06-27T14:32:24.836703+00:00",
+      "total": "128.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 3,
+          "preco_unitario": "30.00",
+          "subtotal": "90.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 6,
+      "timestamp": "2026-06-27T14:32:24.969968+00:00",
+      "total": "158.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 4,
+          "preco_unitario": "30.00",
+          "subtotal": "120.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 7,
+      "timestamp": "2026-06-27T14:32:25.129632+00:00",
+      "total": "188.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 5,
+          "preco_unitario": "30.00",
+          "subtotal": "150.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 8,
+      "timestamp": "2026-06-27T14:32:25.267387+00:00",
+      "total": "218.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 6,
+          "preco_unitario": "30.00",
+          "subtotal": "180.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 9,
+      "timestamp": "2026-06-27T14:32:25.421846+00:00",
+      "total": "248.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 7,
+          "preco_unitario": "30.00",
+          "subtotal": "210.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 10,
+      "timestamp": "2026-06-27T14:32:25.562223+00:00",
+      "total": "278.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 8,
+          "preco_unitario": "30.00",
+          "subtotal": "240.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 11,
+      "timestamp": "2026-06-27T14:32:25.716677+00:00",
+      "total": "308.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 9,
+          "preco_unitario": "30.00",
+          "subtotal": "270.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 12,
+      "timestamp": "2026-06-27T14:32:25.851773+00:00",
+      "total": "338.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 10,
+          "preco_unitario": "30.00",
+          "subtotal": "300.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 13,
+      "timestamp": "2026-06-27T14:32:25.987856+00:00",
+      "total": "368.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 11,
+          "preco_unitario": "30.00",
+          "subtotal": "330.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 14,
+      "timestamp": "2026-06-27T14:32:26.132992+00:00",
+      "total": "398.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 12,
+          "preco_unitario": "30.00",
+          "subtotal": "360.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 15,
+      "timestamp": "2026-06-27T14:32:26.285037+00:00",
+      "total": "428.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 13,
+          "preco_unitario": "30.00",
+          "subtotal": "390.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 16,
+      "timestamp": "2026-06-27T14:32:26.449706+00:00",
+      "total": "458.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 14,
+          "preco_unitario": "30.00",
+          "subtotal": "420.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 17,
+      "timestamp": "2026-06-27T14:32:26.579288+00:00",
+      "total": "488.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 15,
+          "preco_unitario": "30.00",
+          "subtotal": "450.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 18,
+      "timestamp": "2026-06-27T14:32:26.713324+00:00",
+      "total": "518.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 16,
+          "preco_unitario": "30.00",
+          "subtotal": "480.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 19,
+      "timestamp": "2026-06-27T14:32:27.066265+00:00",
+      "total": "548.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 16,
+          "preco_unitario": "30.00",
+          "subtotal": "480.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 20,
+      "timestamp": "2026-06-27T14:32:27.570498+00:00",
+      "total": "578.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 16,
+          "preco_unitario": "30.00",
+          "subtotal": "480.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 21,
+      "timestamp": "2026-06-27T14:32:27.827101+00:00",
+      "total": "608.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 17,
+          "preco_unitario": "30.00",
+          "subtotal": "510.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    }
+  ],
+  "obs": "",
+  "versao_atual": 21,
+  "status": "aberta"
+}

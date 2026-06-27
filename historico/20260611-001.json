@@ -1,0 +1,108 @@
+{
+  "id_comanda": "20260611-001",
+  "numero": 1,
+  "mesa": 2,
+  "cliente": "luana",
+  "versoes": [
+    {
+      "versao": 1,
+      "timestamp": "2026-06-11T16:08:02.078818+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-11T16:08:21.846093+00:00",
+      "total": "38.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 3,
+      "timestamp": "2026-06-11T16:08:27.015601+00:00",
+      "total": "43.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 4,
+      "timestamp": "2026-06-11T16:08:28.588516+00:00",
+      "total": "49.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 4,
+      "timestamp": "2026-06-11T16:09:08.019540+00:00",
+      "total": "49.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        }
+      ]
+    }
+  ],
+  "obs": "",
+  "versao_atual": 4,
+  "status": "fechada"
+}

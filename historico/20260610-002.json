@@ -2,7 +2,7 @@
   "id_comanda": "20260610-002",
   "numero": 2,
   "mesa": 2,
-  "cliente": "joao",
+  "cliente": "",
   "versoes": [
     {
       "versao": 1,
@@ -196,9 +196,148 @@
           "obs": ""
         }
       ]
+    },
+    {
+      "versao": 1,
+      "timestamp": "2026-06-10T22:18:29.742893+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-10T22:18:31.623302+00:00",
+      "total": "30.00",
+      "itens": [
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 3,
+      "timestamp": "2026-06-10T22:18:32.195407+00:00",
+      "total": "60.00",
+      "itens": [
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 4,
+      "timestamp": "2026-06-10T22:18:34.052055+00:00",
+      "total": "66.00",
+      "itens": [
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 5,
+      "timestamp": "2026-06-10T22:18:34.351463+00:00",
+      "total": "70.00",
+      "itens": [
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Agua mineral",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 5,
+      "timestamp": "2026-06-11T16:09:13.183242+00:00",
+      "total": "70.00",
+      "itens": [
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Agua mineral",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        }
+      ]
     }
   ],
   "obs": "",
-  "versao_atual": 3,
+  "versao_atual": 5,
   "status": "fechada"
 }

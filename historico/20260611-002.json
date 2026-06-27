@@ -1,0 +1,65 @@
+{
+  "id_comanda": "20260611-002",
+  "numero": 2,
+  "mesa": 2,
+  "cliente": "",
+  "versoes": [
+    {
+      "versao": 1,
+      "timestamp": "2026-06-11T16:10:22.751796+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-11T16:10:29.718584+00:00",
+      "total": "38.00",
+      "itens": [
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 3,
+      "timestamp": "2026-06-11T16:10:43.609935+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 4,
+      "timestamp": "2026-06-11T16:13:58.046751+00:00",
+      "total": "4.00",
+      "itens": [
+        {
+          "item": "Agua mineral",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 4,
+      "timestamp": "2026-06-11T16:14:00.984967+00:00",
+      "total": "4.00",
+      "itens": [
+        {
+          "item": "Agua mineral",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        }
+      ]
+    }
+  ],
+  "obs": "",
+  "versao_atual": 4,
+  "status": "fechada"
+}

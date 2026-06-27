@@ -1,0 +1,45 @@
+{
+  "id_comanda": "20260613-002",
+  "numero": 2,
+  "mesa": 5,
+  "cliente": "joana",
+  "versoes": [
+    {
+      "versao": 1,
+      "timestamp": "2026-06-14T02:08:12.943627+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-14T02:08:18.657265+00:00",
+      "total": "20.00",
+      "itens": [
+        {
+          "item": "fezes",
+          "quantidade": 1,
+          "preco_unitario": "20.00",
+          "subtotal": "20.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-14T02:08:58.804809+00:00",
+      "total": "20.00",
+      "itens": [
+        {
+          "item": "fezes",
+          "quantidade": 1,
+          "preco_unitario": "20.00",
+          "subtotal": "20.00",
+          "obs": ""
+        }
+      ]
+    }
+  ],
+  "obs": "",
+  "versao_atual": 2,
+  "status": "fechada"
+}

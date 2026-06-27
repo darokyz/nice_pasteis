@@ -1,0 +1,108 @@
+{
+  "id_comanda": "20260619-001",
+  "numero": 1,
+  "mesa": 1,
+  "cliente": "maria",
+  "versoes": [
+    {
+      "versao": 1,
+      "timestamp": "2026-06-19T18:57:38.881434+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-19T18:57:43.706172+00:00",
+      "total": "30.00",
+      "itens": [
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 3,
+      "timestamp": "2026-06-19T18:57:45.800008+00:00",
+      "total": "35.00",
+      "itens": [
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 4,
+      "timestamp": "2026-06-19T18:57:47.350078+00:00",
+      "total": "41.00",
+      "itens": [
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 4,
+      "timestamp": "2026-06-19T18:57:57.570506+00:00",
+      "total": "41.00",
+      "itens": [
+        {
+          "item": "Estrogonofe de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Arroz",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        }
+      ]
+    }
+  ],
+  "obs": "",
+  "versao_atual": 4,
+  "status": "fechada"
+}

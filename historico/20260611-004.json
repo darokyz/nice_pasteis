@@ -1,0 +1,493 @@
+{
+  "id_comanda": "20260611-004",
+  "numero": 4,
+  "mesa": 2,
+  "cliente": "",
+  "versoes": [
+    {
+      "versao": 1,
+      "timestamp": "2026-06-11T16:18:46.003115+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-11T16:18:48.104420+00:00",
+      "total": "4.00",
+      "itens": [
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 3,
+      "timestamp": "2026-06-11T16:19:00.924194+00:00",
+      "total": "9.00",
+      "itens": [
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 4,
+      "timestamp": "2026-06-11T16:19:01.939120+00:00",
+      "total": "15.00",
+      "itens": [
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 5,
+      "timestamp": "2026-06-11T16:19:05.412779+00:00",
+      "total": "45.00",
+      "itens": [
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 6,
+      "timestamp": "2026-06-11T16:19:06.400990+00:00",
+      "total": "75.00",
+      "itens": [
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 7,
+      "timestamp": "2026-06-11T16:19:07.273567+00:00",
+      "total": "105.00",
+      "itens": [
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 2,
+          "preco_unitario": "30.00",
+          "subtotal": "60.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 8,
+      "timestamp": "2026-06-11T16:19:07.398859+00:00",
+      "total": "135.00",
+      "itens": [
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 3,
+          "preco_unitario": "30.00",
+          "subtotal": "90.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 9,
+      "timestamp": "2026-06-11T16:19:07.545816+00:00",
+      "total": "165.00",
+      "itens": [
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 4,
+          "preco_unitario": "30.00",
+          "subtotal": "120.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 10,
+      "timestamp": "2026-06-11T16:19:07.684199+00:00",
+      "total": "195.00",
+      "itens": [
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 5,
+          "preco_unitario": "30.00",
+          "subtotal": "150.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 11,
+      "timestamp": "2026-06-11T16:19:07.814832+00:00",
+      "total": "225.00",
+      "itens": [
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 6,
+          "preco_unitario": "30.00",
+          "subtotal": "180.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 12,
+      "timestamp": "2026-06-11T16:19:07.940911+00:00",
+      "total": "255.00",
+      "itens": [
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 7,
+          "preco_unitario": "30.00",
+          "subtotal": "210.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 13,
+      "timestamp": "2026-06-11T16:19:08.174539+00:00",
+      "total": "285.00",
+      "itens": [
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 8,
+          "preco_unitario": "30.00",
+          "subtotal": "240.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 13,
+      "timestamp": "2026-06-11T16:19:55.764285+00:00",
+      "total": "285.00",
+      "itens": [
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Salada",
+          "quantidade": 1,
+          "preco_unitario": "5.00",
+          "subtotal": "5.00",
+          "obs": ""
+        },
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 8,
+          "preco_unitario": "30.00",
+          "subtotal": "240.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    }
+  ],
+  "obs": "",
+  "versao_atual": 13,
+  "status": "fechada"
+}
