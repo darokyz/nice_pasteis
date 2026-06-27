@@ -1,7 +1,7 @@
 {
   "id_comanda": "20260627-001",
   "numero": 1,
-  "mesa": 2,
+  "mesa": 5,
   "cliente": "",
   "versoes": [
     {
@@ -177,9 +177,15 @@
           "obs": ""
         }
       ]
+    },
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T14:59:59.053139+00:00",
+      "total": "0",
+      "itens": []
     }
   ],
   "obs": "",
-  "versao_atual": 6,
-  "status": "fechada"
+  "versao_atual": 1,
+  "status": "aberta"
 }

@@ -3,139 +3,243 @@
 
 {% block extra_style %}
 <style>
-  .index-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    margin-bottom: 1.8rem;
-    padding-bottom: 1.2rem;
-    border-bottom: 1px solid var(--gold-border);
-  }
-
-  /* Resumo do dia */
-  .resumo-dia {
-    display: flex;
-    gap: .8rem;
-  }
-  .resumo-bloco {
-    background: var(--bg-card);
+  /* ── BANNER DO DIA ─────────────────────────────── */
+  .dia-banner {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr 1px 1fr;
+    gap: 0;
+    margin-bottom: 2.5rem;
     border: 1px solid var(--gold-border);
     border-radius: var(--r);
-    padding: .8rem 1.2rem;
-    text-align: right;
-    min-width: 130px;
+    overflow: hidden;
+    background: var(--bg-card);
+    box-shadow: 0 0 40px rgba(200,135,58,0.06);
   }
-  .resumo-bloco .rb-label {
-    font-size: .65rem;
-    letter-spacing: 1.5px;
+  .dia-bloco {
+    padding: 1.6rem 2rem;
+    position: relative;
+  }
+  .dia-sep {
+    background: var(--gold-border);
+    align-self: stretch;
+  }
+  .dia-bloco-label {
+    font-size: .62rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--cream-35);
-    margin-bottom: .2rem;
+    margin-bottom: .5rem;
   }
-  .resumo-bloco .rb-valor {
+  .dia-bloco-valor {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1;
+  }
+  .dia-bloco-valor b {
+    font-weight: 600;
+    color: var(--gold);
+  }
+  .dia-bloco-sub {
+    font-size: .75rem;
+    color: var(--cream-35);
+    margin-top: .4rem;
+  }
+  .dia-bloco.destaque {
+    background: linear-gradient(135deg, rgba(200,135,58,0.08) 0%, transparent 60%);
+  }
+
+  /* ── HEADER SEÇÃO ──────────────────────────────── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .section-header-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold-border), transparent);
+    margin-left: 1rem;
+  }
+
+  /* ── LEDGER — lista editorial ──────────────────── */
+  .ledger {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .ledger-row {
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.1rem 1.4rem;
+    text-decoration: none;
+    color: var(--cream);
+    border-radius: var(--r);
+    position: relative;
+    transition: background .2s;
+    border-bottom: 1px solid rgba(237,224,196,0.05);
+    overflow: hidden;
+  }
+  .ledger-row:last-child { border-bottom: none; }
+
+  /* Glow que varre da esquerda pra direita no hover */
+  .ledger-row::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+      rgba(200,135,58,0.12) 0%,
+      rgba(200,135,58,0.04) 40%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity .25s;
+    pointer-events: none;
+  }
+  .ledger-row:hover::before { opacity: 1; }
+  .ledger-row:hover { background: rgba(200,135,58,0.03); }
+
+  /* Borda esquerda dourada no hover */
+  .ledger-row::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 15%; bottom: 15%;
+    width: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: opacity .2s, transform .2s;
+  }
+  .ledger-row:hover::after {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  /* Número grande */
+  .ledger-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem;
     font-weight: 600;
     color: var(--gold);
     line-height: 1;
+    text-align: right;
+    opacity: .9;
   }
 
-  /* Grid */
-  .comandas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    gap: 1rem;
-  }
-
-  /* Card */
-  .cc {
-    position: relative;
+  /* Info central */
+  .ledger-info { min-width: 0; }
+  .ledger-nome {
+    font-size: .92rem;
+    font-weight: 500;
+    white-space: nowrap;
     overflow: hidden;
-    background: var(--bg-card);
-    border-radius: var(--r);
-    padding: 1.4rem;
-    text-decoration: none;
-    display: block;
-    box-shadow: 0 0 0 1px var(--gold-border), 0 4px 20px rgba(0,0,0,0.25);
-    transition: box-shadow .25s, transform .2s, background .2s;
+    text-overflow: ellipsis;
   }
-  .cc:hover {
-    background: var(--bg-hover);
-    box-shadow: 0 0 0 1px rgba(200,135,58,0.45), 0 8px 32px rgba(0,0,0,0.35), 0 0 24px rgba(200,135,58,0.06);
-    transform: translateY(-3px);
-  }
-  .cc-watermark {
-    position: absolute;
-    right: -8px; bottom: -16px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 7rem; font-weight: 600;
-    color: var(--gold); opacity: .04;
-    line-height: 1; pointer-events: none;
-    user-select: none; letter-spacing: -4px;
-  }
-  .cc-top {
+  .ledger-meta {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: .7rem;
+    gap: .4rem;
+    margin-top: .35rem;
+    flex-wrap: wrap;
+    align-items: center;
   }
-  .cc-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.4rem; font-weight: 600;
-    color: var(--gold); line-height: 1;
-  }
-  .cc-cliente { font-size: .8rem; color: var(--cream-35); margin-top: .25rem; }
-  .cc-meta { display: flex; gap: .4rem; margin-top: .25rem; flex-wrap: wrap; align-items: center; }
-  .cc-total { font-size: 1.2rem; font-weight: 600; color: var(--cream); margin-top: .9rem; font-variant-numeric: tabular-nums; }
-  .cc-itens { font-size: .72rem; color: var(--cream-35); margin-top: .15rem; }
 
-  /* Indicador de tempo */
+  /* Lado direito */
+  .ledger-right { text-align: right; flex-shrink: 0; }
+  .ledger-total {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .ledger-itens {
+    font-size: .72rem;
+    color: var(--cream-35);
+    margin-top: .2rem;
+  }
+
+  /* Tempo */
   .tempo-chip {
     font-size: .68rem;
     color: var(--cream-35);
     background: var(--cream-15);
     border: 1px solid rgba(237,224,196,0.1);
     border-radius: 6px;
-    padding: .2rem .6rem;
+    padding: .2rem .55rem;
   }
-  .tempo-chip.alerta {
-    color: #e0a060;
-    background: rgba(224,160,96,0.1);
-    border-color: rgba(224,160,96,0.25);
-  }
-  .tempo-chip.urgente {
-    color: var(--red);
-    background: var(--red-bg);
-    border-color: var(--red-border);
+  .tempo-chip.alerta { color: #e0a060; background: rgba(224,160,96,0.1); border-color: rgba(224,160,96,0.25); }
+  .tempo-chip.urgente { color: var(--red); background: var(--red-bg); border-color: var(--red-border); }
+
+  /* Container com borda */
+  .ledger-wrap {
+    border: 1px solid var(--gold-border);
+    border-radius: var(--r);
+    background: var(--bg-card);
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
   }
 
   /* Empty */
-  .empty { text-align: center; padding: 5rem 2rem; }
-  .empty-glyph { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-style: italic; color: var(--gold-border); margin-bottom: 1rem; line-height: 1; }
+  .empty {
+    text-align: center;
+    padding: 5rem 2rem;
+    border: 1px solid var(--gold-border);
+    border-radius: var(--r);
+    background: var(--bg-card);
+  }
+  .empty-glyph {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-style: italic;
+    color: var(--gold-border);
+    margin-bottom: 1rem;
+    line-height: 1;
+  }
   .empty p { font-size: .9rem; color: var(--cream-35); margin-bottom: 1.5rem; }
+
+  @media (max-width: 600px) {
+    .dia-banner { grid-template-columns: 1fr; }
+    .dia-sep { display: none; }
+    .ledger-row { grid-template-columns: 60px 1fr auto; gap: 1rem; }
+    .ledger-num { font-size: 2.2rem; }
+  }
 </style>
 {% endblock %}
 
 {% block content %}
-<div class="index-header">
-  <div>
-    {% if comandas %}
-    <div class="section-label" style="margin-bottom:.4rem;">{{ comandas|length }} em aberto</div>
-    {% endif %}
-    <h1 class="page-title">Comandas <b>abertas</b></h1>
-  </div>
 
-  <!-- Resumo do dia -->
-  <div class="resumo-dia">
-    <div class="resumo-bloco">
-      <div class="rb-label">Fechadas hoje</div>
-      <div class="rb-valor">{{ qtd_fechadas }}</div>
-    </div>
-    <div class="resumo-bloco">
-      <div class="rb-label">Total do dia</div>
-      <div class="rb-valor">R$ {{ total_dia }}</div>
-    </div>
+<!-- Banner do dia -->
+<div class="dia-banner">
+  <div class="dia-bloco destaque">
+    <div class="dia-bloco-label">Total faturado hoje</div>
+    <div class="dia-bloco-valor"><b>R$ {{ total_dia }}</b></div>
+    <div class="dia-bloco-sub">{% now "d \d\e F" %}</div>
   </div>
+  <div class="dia-sep"></div>
+  <div class="dia-bloco">
+    <div class="dia-bloco-label">Comandas fechadas</div>
+    <div class="dia-bloco-valor">{{ qtd_fechadas }}</div>
+    <div class="dia-bloco-sub">hoje</div>
+  </div>
+  <div class="dia-sep"></div>
+  <div class="dia-bloco">
+    <div class="dia-bloco-label">Em aberto agora</div>
+    <div class="dia-bloco-valor">{{ comandas|length }}</div>
+    <div class="dia-bloco-sub">comanda{{ comandas|length|pluralize:"s" }}</div>
+  </div>
+</div>
+
+<!-- Seção de comandas -->
+<div class="section-header">
+  <span class="section-label">Comandas abertas</span>
+  <div class="section-header-line"></div>
 </div>
 
 {% if not comandas %}
@@ -145,54 +249,49 @@
     <a href="{% url 'nova_comanda' %}" class="btn btn-gold">+ Abrir primeira comanda</a>
   </div>
 {% else %}
-  <div class="comandas-grid">
-    {% for c in comandas %}
-    <a href="{% url 'comanda_detalhe' c.pk %}" class="cc">
-      <div class="cc-watermark">{{ c.numero }}</div>
-      <div class="cc-top">
-        <div>
-          <div class="cc-num">#{{ c.numero }}</div>
-          <div class="cc-cliente">{{ c.cliente|default:"—" }}</div>
+  <div class="ledger-wrap">
+    <div class="ledger">
+      {% for c in comandas %}
+      <a href="{% url 'comanda_detalhe' c.pk %}" class="ledger-row">
+        <div class="ledger-num">#{{ c.numero }}</div>
+        <div class="ledger-info">
+          <div class="ledger-nome">
+            {% if c.cliente %}{{ c.cliente }}{% else %}<span style="color:var(--cream-35);font-style:italic;">sem nome</span>{% endif %}
+          </div>
+          <div class="ledger-meta">
+            {% if c.mesa %}<span class="chip">Mesa {{ c.mesa }}</span>{% endif %}
+            <span class="chip">v{{ c.versao }}</span>
+            <span class="tempo-chip" data-criada="{{ c.criada_em.isoformat }}">...</span>
+          </div>
         </div>
-        <span class="badge badge-open">Aberta</span>
-      </div>
-      <div class="cc-meta">
-        {% if c.mesa %}<span class="chip">Mesa {{ c.mesa }}</span>{% endif %}
-        <span class="chip">v{{ c.versao }}</span>
-        <!-- Indicador de tempo via JS -->
-        <span class="tempo-chip" data-criada="{{ c.criada_em.isoformat }}">...</span>
-      </div>
-      <div class="divider"></div>
-      <div class="cc-total">R$ {{ c.total }}</div>
-      <div class="cc-itens">{{ c.itens.count }} item{{ c.itens.count|pluralize:"s" }}</div>
-    </a>
-    {% endfor %}
+        <div class="ledger-right">
+          <div class="ledger-total">R$ {{ c.total }}</div>
+          <div class="ledger-itens">{{ c.itens.count }} item{{ c.itens.count|pluralize:"s" }}</div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
   </div>
 {% endif %}
 
 <script>
   function tempoDecorrido(isoString) {
     const criada = new Date(isoString);
-    const agora = new Date();
-    const diff = Math.floor((agora - criada) / 60000); // minutos
-
-    if (diff < 1)   return { texto: 'agora', classe: '' };
-    if (diff < 30)  return { texto: `há ${diff}min`, classe: '' };
-    if (diff < 60)  return { texto: `há ${diff}min`, classe: 'alerta' };
-    const horas = Math.floor(diff / 60);
-    const mins  = diff % 60;
-    return { texto: `há ${horas}h${mins > 0 ? mins + 'min' : ''}`, classe: 'urgente' };
+    const diff = Math.floor((new Date() - criada) / 60000);
+    if (diff < 1)  return { texto: 'agora',    classe: '' };
+    if (diff < 30) return { texto: `há ${diff}min`, classe: '' };
+    if (diff < 60) return { texto: `há ${diff}min`, classe: 'alerta' };
+    const h = Math.floor(diff / 60), m = diff % 60;
+    return { texto: `há ${h}h${m > 0 ? m + 'min' : ''}`, classe: 'urgente' };
   }
-
-  function atualizarTempos() {
+  function atualizar() {
     document.querySelectorAll('.tempo-chip[data-criada]').forEach(el => {
       const { texto, classe } = tempoDecorrido(el.dataset.criada);
       el.textContent = texto;
       el.className = 'tempo-chip ' + classe;
     });
   }
-
-  atualizarTempos();
-  setInterval(atualizarTempos, 30000); // atualiza a cada 30s
+  atualizar();
+  setInterval(atualizar, 30000);
 </script>
 {% endblock %}
