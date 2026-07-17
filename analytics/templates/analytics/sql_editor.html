@@ -1,0 +1,251 @@
+{% extends "comandas/base.html" %}
+{% block title %}SQL Editor — Nice Analytics{% endblock %}
+
+{% block extra_style %}
+<style>
+  .editor-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--gold-border);
+    flex-wrap: wrap;
+    gap: .8rem;
+  }
+
+  /* Editor SQL */
+  .sql-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 1.2rem;
+  }
+  .sql-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .65rem 1rem;
+    background: var(--bg-raised);
+    border-bottom: 1px solid var(--gold-border);
+  }
+  .sql-toolbar-label {
+    font-size: .68rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--cream-35);
+    font-weight: 600;
+  }
+  .sql-textarea {
+    width: 100%;
+    min-height: 140px;
+    padding: 1rem 1.2rem;
+    background: var(--bg-card) !important;
+    border: none !important;
+    border-radius: 0 !important;
+    color: var(--cream) !important;
+    font-family: 'Courier New', 'Consolas', monospace !important;
+    font-size: .88rem !important;
+    line-height: 1.6;
+    resize: vertical;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+  .sql-textarea::placeholder { color: var(--cream-35) !important; }
+
+  /* Queries de exemplo */
+  .exemplos {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .exemplos-titulo {
+    font-size: .68rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--cream-35);
+    margin-bottom: .8rem;
+    font-weight: 600;
+  }
+  .exemplo-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .exemplo-chip {
+    font-size: .75rem;
+    padding: .3rem .75rem;
+    border-radius: 6px;
+    border: 1px solid var(--gold-border);
+    background: var(--gold-dim);
+    color: var(--gold);
+    cursor: pointer;
+    transition: background .15s;
+    font-family: 'Courier New', monospace;
+  }
+  .exemplo-chip:hover { background: rgba(200,135,58,0.2); }
+
+  /* Resultado */
+  .resultado-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+  }
+  .resultado-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .65rem 1rem;
+    background: var(--bg-raised);
+    border-bottom: 1px solid var(--gold-border);
+  }
+  .resultado-label {
+    font-size: .68rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--cream-35);
+    font-weight: 600;
+  }
+  .resultado-count { font-size: .75rem; color: var(--gold); }
+
+  .res-table { width: 100%; border-collapse: collapse; font-size: .84rem; overflow-x: auto; }
+  .res-table th {
+    text-align: left;
+    padding: .6rem 1rem;
+    font-size: .65rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--cream-35);
+    font-weight: 600;
+    border-bottom: 1px solid var(--gold-border);
+    background: var(--bg-raised);
+    white-space: nowrap;
+  }
+  .res-table td {
+    padding: .65rem 1rem;
+    border-bottom: 1px solid rgba(237,224,196,0.05);
+    color: var(--cream);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  [data-theme="light"] .res-table td { border-bottom-color: rgba(44,36,24,0.06); }
+  .res-table tr:last-child td { border-bottom: none; }
+  .res-table tr:hover td { background: var(--gold-dim); }
+  .res-table-wrap { overflow-x: auto; }
+
+  /* Erro */
+  .sql-erro {
+    background: var(--red-bg);
+    color: var(--red);
+    border: 1px solid var(--red-border);
+    border-radius: 7px;
+    padding: .9rem 1.2rem;
+    font-family: 'Courier New', monospace;
+    font-size: .84rem;
+    margin-bottom: 1.2rem;
+  }
+  .sql-erro-label { font-size: .68rem; letter-spacing: 1px; text-transform: uppercase; opacity: .7; margin-bottom: .3rem; }
+
+  .vazio { text-align: center; padding: 2.5rem; color: var(--cream-35); font-size: .85rem; font-style: italic; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="editor-header">
+  <div>
+    <div class="section-label" style="margin-bottom:.4rem;">
+      <a href="{% url 'analytics:dashboard' %}" style="color:var(--cream-35);text-decoration:none;">Analytics</a>
+      <span style="margin:0 .4rem;">›</span> SQL Editor
+    </div>
+    <h1 class="page-title">SQL <b>Editor</b></h1>
+  </div>
+  <div style="font-size:.75rem;color:var(--cream-35);max-width:280px;text-align:right;line-height:1.6;">
+    Apenas <span style="color:var(--gold);font-weight:600;">SELECT</span> permitido.
+    Tabelas: <code style="color:var(--gold);">comandas_comanda</code>,
+    <code style="color:var(--gold);">comandas_itemcomanda</code>,
+    <code style="color:var(--gold);">comandas_item</code>,
+    <code style="color:var(--gold);">comandas_categoria</code>
+  </div>
+</div>
+
+<!-- Queries de exemplo -->
+<div class="exemplos">
+  <div class="exemplos-titulo">Exemplos rápidos</div>
+  <div class="exemplo-chips">
+    <span class="exemplo-chip" onclick="setQuery(this)">SELECT * FROM comandas_comanda LIMIT 10</span>
+    <span class="exemplo-chip" onclick="setQuery(this)">SELECT nome, preco FROM comandas_item ORDER BY preco DESC</span>
+    <span class="exemplo-chip" onclick="setQuery(this)">SELECT DATE(fechada_em) as dia, COUNT(*) as total FROM comandas_comanda WHERE status='fechada' GROUP BY dia ORDER BY dia DESC</span>
+    <span class="exemplo-chip" onclick="setQuery(this)">SELECT i.nome, SUM(ic.quantidade) as vendas FROM comandas_itemcomanda ic JOIN comandas_item i ON i.id=ic.item_id GROUP BY ic.item_id ORDER BY vendas DESC</span>
+  </div>
+</div>
+
+<!-- Editor -->
+<form method="post">
+  {% csrf_token %}
+  <div class="sql-wrap">
+    <div class="sql-toolbar">
+      <span class="sql-toolbar-label">Query</span>
+      <button type="submit" class="btn btn-gold" style="padding:.4rem 1.1rem;font-size:.8rem;">
+        ▶ Executar
+      </button>
+    </div>
+    <textarea
+      id="sql-input"
+      name="query"
+      class="sql-textarea"
+      placeholder="SELECT * FROM comandas_comanda LIMIT 10"
+      spellcheck="false"
+    >{{ query }}</textarea>
+  </div>
+</form>
+
+<!-- Erro -->
+{% if erro %}
+<div class="sql-erro">
+  <div class="sql-erro-label">Erro</div>
+  {{ erro }}
+</div>
+{% endif %}
+
+<!-- Resultado -->
+{% if resultado is not None %}
+<div class="resultado-wrap">
+  <div class="resultado-header">
+    <span class="resultado-label">Resultado</span>
+    <span class="resultado-count">{{ resultado|length }} linha{{ resultado|length|pluralize:"s" }}</span>
+  </div>
+  {% if resultado %}
+  <div class="res-table-wrap">
+    <table class="res-table">
+      <thead>
+        <tr>{% for col in colunas %}<th>{{ col }}</th>{% endfor %}</tr>
+      </thead>
+      <tbody>
+        {% for row in resultado %}
+        <tr>{% for cell in row %}<td>{{ cell|default:"NULL" }}</td>{% endfor %}</tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+    <div class="vazio">Nenhum resultado encontrado.</div>
+  {% endif %}
+</div>
+{% endif %}
+
+<script>
+  function setQuery(el) {
+    document.getElementById('sql-input').value = el.textContent.trim();
+    document.getElementById('sql-input').focus();
+  }
+
+  // Ctrl+Enter para executar
+  document.getElementById('sql-input').addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+      this.closest('form').submit();
+    }
+  });
+</script>
+{% endblock %}

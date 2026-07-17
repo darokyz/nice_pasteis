@@ -63,8 +63,10 @@ def adicionar_item(request, pk):
     obs     = request.POST.get('obs', '')
 
     ic, criado = ItemComanda.objects.get_or_create(
-        comanda=comanda, item=item, obs=obs,
-        defaults={'quantidade': qtd}
+        comanda=comanda,
+        item=item,
+        obs=obs,
+        defaults={'quantidade': qtd, 'preco_unitario': item.preco},
     )
     if not criado:
         ic.quantidade += qtd

@@ -1,0 +1,268 @@
+{% extends "comandas/base.html" %}
+{% block title %}Analytics — Nice{% endblock %}
+
+{% block extra_style %}
+<style>
+  .an-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--gold-border);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  /* Filtro de período */
+  .periodo-btns { display: flex; gap: .4rem; }
+  .periodo-btn {
+    padding: .35rem .85rem;
+    border-radius: 6px;
+    border: 1px solid var(--gold-border);
+    background: var(--gold-dim);
+    color: var(--cream-35);
+    font-size: .78rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .15s;
+  }
+  .periodo-btn:hover, .periodo-btn.ativo {
+    background: var(--gold);
+    color: var(--bg);
+    border-color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* Grid de painéis */
+  .an-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .an-grid.full { grid-template-columns: 1fr; }
+  @media (max-width: 720px) { .an-grid { grid-template-columns: 1fr; } }
+
+  /* Painel */
+  .painel {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+  }
+  .painel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .9rem 1.2rem;
+    border-bottom: 1px solid var(--gold-border);
+    background: var(--bg-raised);
+  }
+  .painel-titulo {
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--cream-35);
+  }
+  .painel-body { padding: 0; }
+
+  /* Tabela analítica */
+  .an-table { width: 100%; border-collapse: collapse; font-size: .84rem; }
+  .an-table th {
+    text-align: left;
+    padding: .6rem 1.2rem;
+    font-size: .65rem;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    color: var(--cream-35);
+    font-weight: 600;
+    border-bottom: 1px solid var(--gold-border);
+    background: var(--bg-raised);
+  }
+  .an-table td {
+    padding: .7rem 1.2rem;
+    border-bottom: 1px solid rgba(237,224,196,0.05);
+    color: var(--cream);
+  }
+  [data-theme="light"] .an-table td { border-bottom-color: rgba(44,36,24,0.06); }
+  .an-table tr:last-child td { border-bottom: none; }
+  .an-table tr:hover td { background: var(--gold-dim); }
+  .an-table .num { font-variant-numeric: tabular-nums; font-weight: 500; }
+  .an-table .dest { color: var(--gold); font-weight: 600; }
+
+  /* Cards de métricas */
+  .metricas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  @media (max-width: 720px) { .metricas { grid-template-columns: 1fr 1fr; } }
+  .metrica-card {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    border-radius: 10px;
+    padding: 1.2rem;
+    box-shadow: var(--shadow-card);
+  }
+  .metrica-label { font-size: .65rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--cream-35); margin-bottom: .5rem; }
+  .metrica-valor { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--gold); line-height: 1; font-variant-numeric: tabular-nums; }
+  .metrica-sub { font-size: .75rem; color: var(--cream-35); margin-top: .3rem; }
+
+  /* Link editor */
+  .editor-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--gold);
+    font-size: .8rem;
+    text-decoration: none;
+    border: 1px solid var(--gold-border);
+    border-radius: 7px;
+    padding: .45rem 1rem;
+    background: var(--gold-dim);
+    transition: background .15s;
+  }
+  .editor-link:hover { background: rgba(200,135,58,0.18); }
+
+  .vazio { text-align: center; padding: 2rem; color: var(--cream-35); font-size: .85rem; font-style: italic; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="an-header">
+  <div>
+    <div class="section-label" style="margin-bottom:.4rem;">Últimos {{ dias }} dias</div>
+    <h1 class="page-title">Analytics <b>Nice</b></h1>
+  </div>
+  <div style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+    <div class="periodo-btns">
+      <a href="?dias=7"  class="periodo-btn {% if dias == 7  %}ativo{% endif %}">7d</a>
+      <a href="?dias=30" class="periodo-btn {% if dias == 30 %}ativo{% endif %}">30d</a>
+      <a href="?dias=90" class="periodo-btn {% if dias == 90 %}ativo{% endif %}">90d</a>
+    </div>
+    <a href="{% url 'analytics:sql_editor' %}" class="editor-link">
+      ⌨ SQL Editor
+    </a>
+  </div>
+</div>
+
+<!-- Métricas resumidas -->
+{% if ticket_medio %}
+{% with tm=ticket_medio.0 %}
+<div class="metricas">
+  <div class="metrica-card">
+    <div class="metrica-label">Comandas fechadas</div>
+    <div class="metrica-valor">{{ tm.total_comandas|default:"0" }}</div>
+    <div class="metrica-sub">últimos {{ dias }} dias</div>
+  </div>
+  <div class="metrica-card">
+    <div class="metrica-label">Ticket médio</div>
+    <div class="metrica-valor">R$ {{ tm.ticket_medio|default:"0" }}</div>
+    <div class="metrica-sub">por comanda</div>
+  </div>
+  <div class="metrica-card">
+    <div class="metrica-label">Menor comanda</div>
+    <div class="metrica-valor">R$ {{ tm.menor|default:"0" }}</div>
+    <div class="metrica-sub">no período</div>
+  </div>
+  <div class="metrica-card">
+    <div class="metrica-label">Maior comanda</div>
+    <div class="metrica-valor">R$ {{ tm.maior|default:"0" }}</div>
+    <div class="metrica-sub">no período</div>
+  </div>
+</div>
+{% endwith %}
+{% endif %}
+
+<!-- Painéis -->
+<div class="an-grid">
+
+  <!-- Vendas por dia -->
+  <div class="painel">
+    <div class="painel-header">
+      <span class="painel-titulo">Vendas por dia</span>
+    </div>
+    <div class="painel-body">
+      {% if vendas_por_dia %}
+      <table class="an-table">
+        <thead><tr><th>Data</th><th>Comandas</th><th>Total</th></tr></thead>
+        <tbody>
+          {% for row in vendas_por_dia %}
+          <tr>
+            <td>{{ row.dia }}</td>
+            <td class="num">{{ row.comandas }}</td>
+            <td class="num dest">R$ {{ row.total }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+        <div class="vazio">Sem dados no período</div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Itens mais vendidos -->
+  <div class="painel">
+    <div class="painel-header">
+      <span class="painel-titulo">Itens mais vendidos</span>
+    </div>
+    <div class="painel-body">
+      {% if itens_mais_vendidos %}
+      <table class="an-table">
+        <thead><tr><th>#</th><th>Item</th><th>Qtd</th><th>Total</th></tr></thead>
+        <tbody>
+          {% for row in itens_mais_vendidos %}
+          <tr>
+            <td style="color:var(--cream-35);">{{ forloop.counter }}</td>
+            <td>{{ row.item }}<br><span style="font-size:.72rem;color:var(--cream-35);">{{ row.categoria }}</span></td>
+            <td class="num">{{ row.quantidade }}</td>
+            <td class="num dest">R$ {{ row.total }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+        <div class="vazio">Sem dados no período</div>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+
+<!-- Pico por hora - full width -->
+<div class="an-grid full">
+  <div class="painel">
+    <div class="painel-header">
+      <span class="painel-titulo">Comandas por hora do dia</span>
+    </div>
+    <div class="painel-body">
+      {% if pico_por_hora %}
+      <table class="an-table">
+        <thead><tr><th>Hora</th><th>Comandas</th><th>Volume relativo</th></tr></thead>
+        <tbody>
+          {% for row in pico_por_hora %}
+          <tr>
+            <td class="num">{{ row.hora }}</td>
+            <td class="num">{{ row.comandas }}</td>
+            <td>
+              <div style="background:var(--gold-dim);border-radius:3px;height:8px;overflow:hidden;">
+                <div style="background:var(--gold);height:100%;width:{{ row.comandas }}0%;max-width:100%;border-radius:3px;"></div>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+        <div class="vazio">Sem dados no período</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

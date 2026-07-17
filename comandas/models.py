@@ -1,13 +1,8 @@
 from django.db import models
+from django.db import transaction
+from django.db.models import F
 from django.utils.text import slugify
 from django.utils import timezone
-
-
-def gerar_numero_dia():
-    """Retorna o próximo número sequencial do dia."""
-    hoje = timezone.localdate()
-    count = Comanda.objects.filter(criada_em__date=hoje).count()
-    return count + 1
 
 
 def gerar_id_comanda(numero, data=None):
@@ -52,6 +47,12 @@ class Item(models.Model):
         return f'{self.nome} — R$ {self.preco}'
 
 
+class SequenciaDiaria(models.Model):
+    """Mantém a numeração das comandas sem depender de uma contagem."""
+    data = models.DateField(unique=True)
+    ultimo_numero = models.PositiveIntegerField(default=0)
+
+
 class Comanda(models.Model):
     STATUS_ABERTA = 'aberta'
     STATUS_FECHADA = 'fechada'
@@ -82,10 +83,23 @@ class Comanda(models.Model):
         return f'Comanda #{self.numero} ({self.id_comanda}) — {self.get_status_display()}'
 
     def save(self, *args, **kwargs):
-        if not self.pk:  # nova comanda
-            self.numero = gerar_numero_dia()
-            self.id_comanda = gerar_id_comanda(self.numero)
-        super().save(*args, **kwargs)
+        if self.pk:
+            return super().save(*args, **kwargs)
+
+        # A sequência fica registrada separadamente para não reutilizar números
+        # nem depender de contar as comandas já criadas.
+        hoje = timezone.localdate()
+        with transaction.atomic():
+            sequencia, _ = SequenciaDiaria.objects.select_for_update().get_or_create(
+                data=hoje,
+            )
+            SequenciaDiaria.objects.filter(pk=sequencia.pk).update(
+                ultimo_numero=F('ultimo_numero') + 1,
+            )
+            sequencia.refresh_from_db(fields=['ultimo_numero'])
+            self.numero = sequencia.ultimo_numero
+            self.id_comanda = gerar_id_comanda(self.numero, hoje)
+            return super().save(*args, **kwargs)
 
     @property
     def total(self):
@@ -96,7 +110,7 @@ class Comanda(models.Model):
             {
                 'item': ic.item.nome,
                 'quantidade': ic.quantidade,
-                'preco_unitario': str(ic.item.preco),
+                'preco_unitario': str(ic.preco_unitario),
                 'subtotal': str(ic.subtotal),
                 'obs': ic.obs,
             }
@@ -143,6 +157,7 @@ class Comanda(models.Model):
 class ItemComanda(models.Model):
     comanda     = models.ForeignKey(Comanda, on_delete=models.CASCADE, related_name='itens')
     item        = models.ForeignKey(Item, on_delete=models.PROTECT)
+    preco_unitario = models.DecimalField(max_digits=8, decimal_places=2)
     quantidade  = models.PositiveIntegerField(default=1)
     obs         = models.CharField(max_length=300, blank=True, help_text='Ex: sem cebola, mal passado')
 
@@ -153,6 +168,11 @@ class ItemComanda(models.Model):
     def __str__(self):
         return f'{self.quantidade}x {self.item.nome}'
 
+    def save(self, *args, **kwargs):
+        if self._state.adding and self.preco_unitario is None:
+            self.preco_unitario = self.item.preco
+        super().save(*args, **kwargs)
+
     @property
     def subtotal(self):
-        return self.item.preco * self.quantidade
+        return self.preco_unitario * self.quantidade
