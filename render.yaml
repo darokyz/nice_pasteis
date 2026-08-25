@@ -3,6 +3,7 @@ services:
     name: nice-pasteis
     runtime: python
     plan: free
+    healthCheckPath: /health/
     buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
     startCommand: python manage.py migrate --noinput && python manage.py ensure_superuser && waitress-serve --url-scheme=https --port=$PORT core.wsgi:application
     envVars:

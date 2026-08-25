@@ -26,6 +26,10 @@ class AccessAndAnalyticsTests(TestCase):
             self.assertEqual(response.status_code, 302)
             self.assertIn(reverse('login'), response.url)
 
+    def test_healthcheck_is_available_without_login(self):
+        response = self.client.get(reverse('healthcheck'))
+        self.assertEqual(response.status_code, 204)
+
     def test_dashboard_requires_staff_and_formats_hour(self):
         comanda = Comanda.objects.create()
         comanda.status = Comanda.STATUS_FECHADA
