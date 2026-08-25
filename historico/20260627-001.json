@@ -1,8 +1,8 @@
 {
   "id_comanda": "20260627-001",
   "numero": 1,
-  "mesa": 5,
-  "cliente": "",
+  "mesa": 2,
+  "cliente": "joao",
   "versoes": [
     {
       "versao": 1,
@@ -183,9 +183,71 @@
       "timestamp": "2026-06-27T14:59:59.053139+00:00",
       "total": "0",
       "itens": []
+    },
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T15:02:55.827702+00:00",
+      "total": "10.00",
+      "itens": [
+        {
+          "item": "Suco natural",
+          "quantidade": 1,
+          "preco_unitario": "10.00",
+          "subtotal": "10.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T15:17:49.757715+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T15:17:59.481061+00:00",
+      "total": "132.00",
+      "itens": [
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Virado a paulista - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        }
+      ]
     }
   ],
   "obs": "",
   "versao_atual": 1,
-  "status": "aberta"
+  "status": "fechada"
 }

@@ -67,7 +67,7 @@
     text-transform: uppercase;
     color: var(--cream-35);
   }
-  .painel-body { padding: 0; }
+  .painel-body { padding: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
   /* Tabela analítica */
   .an-table { width: 100%; border-collapse: collapse; font-size: .84rem; }
@@ -101,6 +101,7 @@
     margin-bottom: 1.2rem;
   }
   @media (max-width: 720px) { .metricas { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 420px) { .metricas { grid-template-columns: 1fr; } .an-table { font-size: .76rem; } .an-table th, .an-table td { padding-left: .65rem; padding-right: .65rem; } }
   .metrica-card {
     background: var(--bg-card);
     border: 1px solid var(--gold-border);
@@ -144,9 +145,6 @@
       <a href="?dias=30" class="periodo-btn {% if dias == 30 %}ativo{% endif %}">30d</a>
       <a href="?dias=90" class="periodo-btn {% if dias == 90 %}ativo{% endif %}">90d</a>
     </div>
-    <a href="{% url 'analytics:sql_editor' %}" class="editor-link">
-      ⌨ SQL Editor
-    </a>
   </div>
 </div>
 

@@ -1,8 +1,8 @@
 {
   "id_comanda": "20260627-002",
   "numero": 2,
-  "mesa": 5,
-  "cliente": "",
+  "mesa": 8,
+  "cliente": "maria",
   "versoes": [
     {
       "versao": 1,
@@ -149,9 +149,98 @@
           "obs": ""
         }
       ]
+    },
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T15:02:32.445511+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T15:02:47.484097+00:00",
+      "total": "114.00",
+      "itens": [
+        {
+          "item": "Agua mineral",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        },
+        {
+          "item": "Bife Acebolado",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T15:19:16.536977+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T15:19:25.424732+00:00",
+      "total": "78.00",
+      "itens": [
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        },
+        {
+          "item": "Feijao",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        },
+        {
+          "item": "Virado a paulista - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne",
+          "quantidade": 1,
+          "preco_unitario": "38.00",
+          "subtotal": "38.00",
+          "obs": ""
+        }
+      ]
     }
   ],
   "obs": "",
-  "versao_atual": 2,
+  "versao_atual": 1,
   "status": "fechada"
 }

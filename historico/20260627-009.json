@@ -1,0 +1,59 @@
+{
+  "id_comanda": "20260627-009",
+  "numero": 9,
+  "mesa": 2,
+  "cliente": "",
+  "versoes": [
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T15:29:55.760075+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T15:30:01.649772+00:00",
+      "total": "6.00",
+      "itens": [
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-27T15:31:51.575120+00:00",
+      "total": "6.00",
+      "itens": [
+        {
+          "item": "Refrigerante lata",
+          "quantidade": 1,
+          "preco_unitario": "6.00",
+          "subtotal": "6.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-07-17T22:05:19.393462+00:00",
+      "total": "4.00",
+      "itens": [
+        {
+          "item": "Agua mineral",
+          "quantidade": 1,
+          "preco_unitario": "4.00",
+          "subtotal": "4.00",
+          "obs": ""
+        }
+      ]
+    }
+  ],
+  "obs": "",
+  "versao_atual": 2,
+  "status": "fechada"
+}

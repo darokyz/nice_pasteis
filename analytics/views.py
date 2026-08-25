@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.db import connection
-from django.utils import timezone
-from datetime import timedelta
 
 
 def is_staff(user):
@@ -83,6 +81,7 @@ def _ticket_medio(dias=30):
 
 
 def _pico_por_hora(dias=30):
+    # O cursor do Django usa interpolação de parâmetros; %% resulta em % no SQLite.
     sql = """
         SELECT
             strftime('%%H:00', c.criada_em) AS hora,
@@ -103,7 +102,11 @@ def _pico_por_hora(dias=30):
 @login_required
 @user_passes_test(is_staff)
 def dashboard(request):
-    dias = int(request.GET.get('dias', 30))
+    try:
+        dias = int(request.GET.get('dias', 30))
+    except (TypeError, ValueError):
+        dias = 30
+    dias = dias if dias in {7, 30, 90} else 30
 
     context = {
         'dias': dias,
@@ -113,40 +116,3 @@ def dashboard(request):
         'pico_por_hora':       _pico_por_hora(dias),
     }
     return render(request, 'analytics/dashboard.html', context)
-
-
-@login_required
-@user_passes_test(is_staff)
-def sql_editor(request):
-    resultado = None
-    colunas   = []
-    erro      = None
-    query     = ''
-
-    BLOQUEADOS = ['insert', 'update', 'delete', 'drop', 'alter',
-                  'create', 'truncate', 'replace', 'attach', 'detach']
-
-    if request.method == 'POST':
-        query = request.POST.get('query', '').strip()
-        query_lower = query.lower()
-
-        # Segurança: só SELECT
-        if not query_lower.startswith('select'):
-            erro = 'Apenas consultas SELECT são permitidas.'
-        elif any(cmd in query_lower for cmd in BLOQUEADOS):
-            erro = f'Comando não permitido. Apenas SELECT é aceito.'
-        else:
-            try:
-                with connection.cursor() as cur:
-                    cur.execute(query)
-                    colunas   = [col[0] for col in cur.description]
-                    resultado = cur.fetchall()
-            except Exception as e:
-                erro = str(e)
-
-    return render(request, 'analytics/sql_editor.html', {
-        'query':     query,
-        'colunas':   colunas,
-        'resultado': resultado,
-        'erro':      erro,
-    })

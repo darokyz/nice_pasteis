@@ -5,5 +5,4 @@ app_name = 'analytics'
 
 urlpatterns = [
     path('', views.dashboard, name='dashboard'),
-    path('sql/', views.sql_editor, name='sql_editor'),
 ]

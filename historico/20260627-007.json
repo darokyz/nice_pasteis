@@ -1,0 +1,80 @@
+{
+  "id_comanda": "20260627-007",
+  "numero": 7,
+  "mesa": 5,
+  "cliente": "joao",
+  "versoes": [
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T15:21:17.063935+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T15:21:23.221611+00:00",
+      "total": "30.00",
+      "itens": [
+        {
+          "item": "Bife acebolado - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-27T15:21:25.988920+00:00",
+      "total": "30.00",
+      "itens": [
+        {
+          "item": "Bife acebolado - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    },
+    {
+      "versao": 2,
+      "timestamp": "2026-06-27T15:21:31.689854+00:00",
+      "total": "120.00",
+      "itens": [
+        {
+          "item": "Bife acebolado - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Virado a paulista - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        },
+        {
+          "item": "Parmegiana de carne - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    }
+  ],
+  "obs": "sem cebola",
+  "versao_atual": 2,
+  "status": "fechada"
+}

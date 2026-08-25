@@ -1,0 +1,31 @@
+{
+  "id_comanda": "20260627-006",
+  "numero": 6,
+  "mesa": 4,
+  "cliente": "",
+  "versoes": [
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T15:20:13.767130+00:00",
+      "total": "0",
+      "itens": []
+    },
+    {
+      "versao": 1,
+      "timestamp": "2026-06-27T15:20:18.352670+00:00",
+      "total": "30.00",
+      "itens": [
+        {
+          "item": "Parmegiana de frango - Prato Dia",
+          "quantidade": 1,
+          "preco_unitario": "30.00",
+          "subtotal": "30.00",
+          "obs": ""
+        }
+      ]
+    }
+  ],
+  "obs": "",
+  "versao_atual": 1,
+  "status": "fechada"
+}

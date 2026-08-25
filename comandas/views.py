@@ -1,12 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
 
 from .models import Comanda, Item, ItemComanda, Categoria
 
 
 # ── VIEWS ─────────────────────────────────────────────────────────────────────
 
+@login_required
 def index(request):
     comandas = Comanda.objects.filter(status=Comanda.STATUS_ABERTA).prefetch_related('itens')
 
@@ -27,6 +29,7 @@ def index(request):
     })
 
 
+@login_required
 def nova_comanda(request):
     if request.method == 'POST':
         mesa    = request.POST.get('mesa', '').strip()
@@ -44,6 +47,7 @@ def nova_comanda(request):
     return render(request, 'comandas/nova_comanda.html')
 
 
+@login_required
 def comanda_detalhe(request, pk):
     comanda = get_object_or_404(Comanda, pk=pk)
     categorias = Categoria.objects.prefetch_related('itens').all()
@@ -55,11 +59,16 @@ def comanda_detalhe(request, pk):
     })
 
 
+@login_required
 @require_POST
 def adicionar_item(request, pk):
     comanda = get_object_or_404(Comanda, pk=pk, status=Comanda.STATUS_ABERTA)
     item    = get_object_or_404(Item, pk=request.POST.get('item_id'))
-    qtd     = int(request.POST.get('quantidade', 1))
+    try:
+        qtd = int(request.POST.get('quantidade', 1))
+    except (TypeError, ValueError):
+        qtd = 1
+    qtd = min(max(qtd, 1), 99)
     obs     = request.POST.get('obs', '')
 
     ic, criado = ItemComanda.objects.get_or_create(
@@ -76,6 +85,7 @@ def adicionar_item(request, pk):
     return render(request, 'comandas/partials/lista_itens.html', {'comanda': comanda})
 
 
+@login_required
 @require_POST
 def remover_item(request, pk, item_comanda_id):
     comanda = get_object_or_404(Comanda, pk=pk, status=Comanda.STATUS_ABERTA)
@@ -85,6 +95,7 @@ def remover_item(request, pk, item_comanda_id):
     return render(request, 'comandas/partials/lista_itens.html', {'comanda': comanda})
 
 
+@login_required
 @require_POST
 def salvar_obs(request, pk):
     comanda = get_object_or_404(Comanda, pk=pk, status=Comanda.STATUS_ABERTA)
@@ -93,6 +104,7 @@ def salvar_obs(request, pk):
     return render(request, 'comandas/partials/obs_salva.html', {'comanda': comanda})
 
 
+@login_required
 @require_POST
 def fechar_comanda(request, pk):
     comanda = get_object_or_404(Comanda, pk=pk, status=Comanda.STATUS_ABERTA)
@@ -109,6 +121,7 @@ def fechar_comanda(request, pk):
     return redirect('index')
 
 
+@login_required
 @require_POST
 def reabrir_comanda(request, pk):
     """Reabre uma comanda fechada e incrementa a versão."""
@@ -121,11 +134,13 @@ def reabrir_comanda(request, pk):
     return redirect('comanda_detalhe', pk=comanda.pk)
 
 
+@login_required
 def imprimir_comanda(request, pk):
     comanda = get_object_or_404(Comanda, pk=pk)
     return render(request, 'comandas/imprimir.html', {'comanda': comanda})
 
 
+@login_required
 def historico(request):
     comandas = Comanda.objects.filter(status=Comanda.STATUS_FECHADA).prefetch_related('itens')
     return render(request, 'comandas/historico.html', {'comandas': comandas})
